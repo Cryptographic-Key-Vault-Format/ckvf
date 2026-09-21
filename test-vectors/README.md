@@ -1,0 +1,34 @@
+# CKVF test vectors
+
+Versioned interoperability fixtures for Cryptographic Key Vault Format (CKVF) Community Draft 0.1.
+
+**TEST KEY — NEVER USE IN PRODUCTION.** All private keys, MSKs, and passwords in this directory are fixtures.
+
+CKVF is **not** an IETF standard. SComm and `pubkey.scomm.ai` are the originating use case and initial non-normative reference only. Vectors MUST be usable offline with no SComm dependency.
+
+## Pinning
+
+Consumers **MUST** pin this directory by the contents of [VERSION](VERSION) (currently `0.1.0`) or a matching git tag of the `ckvf` repository.
+
+Do **not** pin `main`.
+
+## Layout
+
+| Path | Contents |
+| --- | --- |
+| `VERSION` | Vector-set SemVer |
+| `manifest.json` | Vector ids, expect pass/fail, optional error code |
+| `vectors/<id>.json` | Fixture for that id |
+| `keys/` | Extra test-key notes |
+
+Password used by encrypted fixtures: `CKVF-TEST-PASSWORD`.
+
+KDF parameters in v0.1.0 fixtures are the SPEC §6.5 minima (`m=16384` KiB, `t=2`, `p=1`) so CI can run them. Production writers SHOULD use the RFC 9106 second recommended option (`m=65536`, `t=3`, `p=4`).
+
+## Short Key IDs
+
+**Short Key IDs are lookup hints and are not unique identifiers.** See `vectors/short-key-id-collision.json`. Applications MUST tolerate collisions. `absolute_key_id` is authoritative.
+
+## License
+
+[BSD-2-Clause](LICENSE).

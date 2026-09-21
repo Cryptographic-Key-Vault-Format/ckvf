@@ -1,0 +1,54 @@
+{
+  "id": "msk-replacement",
+  "description": "MSK replacement retains historical public key and drops old private key",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 2,
+    "previous_generation_hash": "I0jXpnOp8LBsEj_4QgzqFxXlspE7Ph2DaCszCPJopdw",
+    "generation_hash": "_0MKblUzJe3_2auVb_lEFkWGjOP0per5UEwF3BtsxH8",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "QJpkASdfz0rqY9mC"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "zIZRj55re48jZHD2XjsDb_uMd3HOlcUb3vz8pvgmLMacpNO13Ib6PoXiAKa2HFGlZs7HveD0L03yucD3yYz-MyzKfqWeeCOs95diWVgth0hDdGJdUQaub5X3LHnZgilCK4vEQcUlVcu9GRCRxEpBDu4xKGFO2XxO0tma9Xb5gLmSMm-F-LDm76EeelDY1fek8RLGgMwes_EDbYzXSsDx56HSYJEmtHJ1T8GxdQoUtpHn4c1Sel9qYgwxh62b-McdZxn2KO900_T2Zi4-_GdHGaxF35Atxj5dF9OAXATohiYdaBS0gclDoor27lFYsZOdlOHYBKE_xJpcJpp-_D0_OXFTs4YU1Avieax2kM1oguXGvNwXyrAgtMpuySy2AxZsdkoK7IlE_Lx17OfKDtgFdTu25CAREACt0hEtA2YtJRyxETH9s7u7RPIiCvpT3Ym0ObUmKIGqMWJQGWxrNhTr6LbzJZjvYfwvQ4VA5O9zqQSGHAcuYEMd4_eKXJIx4QU8bu_gZDASeD7T4pTubyB2wG-7u0j004rKy_r6xFhpDzy4Yy-hatMH5cCiocBnW3qqlzavnJ787aHDQeTypTUA_xCrVxixlGBavGoVlTUIa8Ax2e2QK-PVuvlmrf1_X8JkIDfcAAcUPj90hbzIVNi4pZQeaKi-sESYJvQQaXdN0JexzzbsoVfJhUjRR8bn1iE_PbzZl_3v67YXd35J4CT7C8pvY3TEMdhz4rMSOVvn-_8tTJ5L7Su7z5U9w8ul_nRzeRi6X3rMnbC-bxHHXeIP3ebIlGPpstjsIwPtVvpWpLsM72XENl7JgKU6jzVKW_bqLObVzmMpEDcRrBefHgSwHgitPTjtcBDcL6NjFhzGByzbV_0-a2bRfVontCdBlBFxVfppgAb_Y7y7i9oYQEfiSmjX_18y04dypZcV6v9t3v0ne_qmocj4eO821GnhplW8jto6VoBmsB9PrSPlX3o6a2drFBwHXiKuq2RsC9ZM2DlbgxfYIXlAnM6F9TS3kCo",
+    "tag": "MFCI3oejE4yCEpDV0gu-vw",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "history": [
+    {
+      "msk_id": "lxU4PNRzZktzINGySXgZa1yRdY7I5CRDj6LwyiHQ0TU",
+      "algorithm": "Ed25519",
+      "public_key": "QdaE37V0jU-0trmBR2y018gmZs8SvbQxaLyZZfStmnQ",
+      "activated_at": "2026-08-17T00:00:00Z",
+      "retired_at": "2026-08-17T00:00:00Z"
+    }
+  ],
+  "current_msk_id": "xE615fNs87kCobQDr7H_hjInfR3ESRMEG7eiY_lMsGM"
+}

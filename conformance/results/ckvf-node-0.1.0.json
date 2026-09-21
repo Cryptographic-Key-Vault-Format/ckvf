@@ -1,0 +1,173 @@
+{
+  "implementation": "@ckvf/node@0.1.0",
+  "ckvf_versions_read": [
+    "1.0"
+  ],
+  "ckvf_versions_write": [
+    "1.0"
+  ],
+  "timestamp": "2026-08-17T06:01:21.847Z",
+  "profiles": {
+    "CKVF Core": {
+      "result": "pass",
+      "tests": [
+        {
+          "id": "empty-vault",
+          "result": "pass"
+        },
+        {
+          "id": "email-identity",
+          "result": "pass"
+        },
+        {
+          "id": "dns-identity",
+          "result": "pass"
+        },
+        {
+          "id": "single-openpgp-key",
+          "result": "pass"
+        },
+        {
+          "id": "multiple-openpgp-keys",
+          "result": "pass"
+        },
+        {
+          "id": "smime-pkcs8-key",
+          "result": "pass"
+        },
+        {
+          "id": "mixed-openpgp-smime",
+          "result": "pass"
+        },
+        {
+          "id": "historical-private-keys",
+          "result": "pass"
+        },
+        {
+          "id": "password-unlock",
+          "result": "pass"
+        },
+        {
+          "id": "wrong-password",
+          "result": "pass"
+        },
+        {
+          "id": "tampered-ciphertext",
+          "result": "pass"
+        },
+        {
+          "id": "tampered-authenticated-header",
+          "result": "pass"
+        },
+        {
+          "id": "invalid-aead-tag",
+          "result": "pass"
+        },
+        {
+          "id": "invalid-json",
+          "result": "pass"
+        },
+        {
+          "id": "unsupported-version",
+          "result": "pass"
+        },
+        {
+          "id": "unknown-optional-extension",
+          "result": "pass"
+        },
+        {
+          "id": "unknown-critical-extension",
+          "result": "pass"
+        },
+        {
+          "id": "short-key-id-collision",
+          "result": "pass"
+        },
+        {
+          "id": "msk-signing",
+          "result": "pass"
+        },
+        {
+          "id": "invalid-msk-signature",
+          "result": "pass"
+        },
+        {
+          "id": "msk-replacement",
+          "result": "pass"
+        },
+        {
+          "id": "generation-increment",
+          "result": "pass"
+        },
+        {
+          "id": "stale-generation",
+          "result": "pass"
+        },
+        {
+          "id": "merge",
+          "result": "pass"
+        },
+        {
+          "id": "merge-conflict",
+          "result": "pass"
+        },
+        {
+          "id": "corrupted-private-key",
+          "result": "pass"
+        }
+      ]
+    },
+    "CKVF OpenPGP Profile": {
+      "result": "pass",
+      "tests": [
+        {
+          "id": "single-openpgp-key",
+          "result": "pass"
+        },
+        {
+          "id": "multiple-openpgp-keys",
+          "result": "pass"
+        },
+        {
+          "id": "mixed-openpgp-smime",
+          "result": "pass"
+        },
+        {
+          "id": "historical-private-keys",
+          "result": "pass"
+        }
+      ]
+    },
+    "CKVF S/MIME Profile": {
+      "result": "pass",
+      "tests": [
+        {
+          "id": "smime-pkcs8-key",
+          "result": "pass"
+        },
+        {
+          "id": "mixed-openpgp-smime",
+          "result": "pass"
+        }
+      ]
+    },
+    "CKVF Email Identity Proof": {
+      "result": "pass",
+      "tests": [
+        {
+          "id": "email-identity",
+          "result": "pass"
+        }
+      ]
+    },
+    "CKVF DNS Identity Proof": {
+      "result": "pass",
+      "tests": [
+        {
+          "id": "dns-identity",
+          "result": "pass"
+        }
+      ]
+    }
+  }
+}

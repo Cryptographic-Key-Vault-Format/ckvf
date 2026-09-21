@@ -1,0 +1,45 @@
+{
+  "id": "multiple-openpgp-keys",
+  "description": "Vault with two OpenPGP keys",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 3,
+    "previous_generation_hash": "bBwLV6ZQic1JoXwZBrNxc4Ws4bhMsmax39f3xw5gQ0E",
+    "generation_hash": "kTsgAKvyUrkIIEdoJ9i2h0qt3SaAgGN-AbP4E9MSO7g",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "zAHN8L92uT3DG3UK"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "7EfmNu-7u24ZNFcoSOH5eHE1CWT9-ZDbd-INEh3RJ0dIYvmTNJRyR84bSizijbP0i097CE-fULl5dxOxsAMqyrSFXRtkH1515EhIAZ_RNNiy_Pt8x1N-4McVV3Fu8_rUPjORRoESvNcbYG2fUV9Zjde0SNHUAt38n_835Ejyypks6DQU29wfDlKr30a7RRHKRYnc957mJxIZNckym0e3AKB_HJe5FYR5xcNb85kQcCSPPugniIu879LSfULxJgYMDbY6q7w8ampjdNzvqVFGB92HGM9senfE9I9a-tT-MSc9VLI4iryjrf-t27IFdCsoRS1OoCb0YyogP4r2zc3tK5HuhJPtG72D_8zICaS_YMXRZ0RkD9YupmwYSPEdi5yFI3JRTdO3cYkuTENpMgSPV0Stfte2cC_wrAvJ-CLxdGJAJGPf3XR-UB1CO1sVF2-4MRcX9hFqSk39lEPgiijjQPmzV79xVfFhbjIXuOsQQlAvzkdPeydVE55xUktPJ5jDNUHnqsyIY1N4v5szSl5B4AhX4LZnx2wZ21itXjn6BMecUcSnotuIUEG-MnfYP-SdIuWNXjWKQfstR826c56zLe1ZcCSKgVXplQHsUb-syrLopwKx_MWE28tMsILEGVp6dmt_ugCCdX0pKxa74QXNzXZu20FEsgi_csiqLAuF9H6virlWB2hfWeZ427RsUQDDqhkJn9zzhsTIQwWwlYbtJuV8Aox0yDkdf_OeWpOS2ngt8YjTSIwMPqEEBTpQlLHyetQDJFaYFYvZXLe1oJY2ul-AvDDyP_YI9qUom5rx-fMvTXj4ffcQXoL6Q2nUZWomG08ioXFZXN4zuKkUBTbaVEOOKK6gSLUI9qcyd6NsYWw_M2t6LADwpzZfsBhZuoXW2jCekZaZf5yiJVPGWL39OekC96rmkXSJeUuJKzcIPCGKQ4ULGJb3dMtK_R4O2td8uqYBM8s5AvrsW0-iHxL4NQJqW3akX3uqHg13IYZbF6sa3sAQlOVy--8BYbBDBJF3zqPAW4gotj6pBVal94ApiSs77zVPhhmYkRiU6xFcaNWpXaLje-ycLAIXBK7aI8K6WqJ9WyPWe9c7wcOlMVrPWIJxJulvnCBWhvBeiiroQAGbVS1klKnVpTmFdloG7oNSuBnF3S5EuYuPRaX1pyA7n6PGVfK2Jb5Ke8h4X5ZUhWlqSW0dGNUKj8ttmx4etlAtcGwLWpQ3iz6JJ7geRxKCYzbDAfXfPzFyEtJDoWNLGbtfr35zqqS7S4PS5JWxUPZsst4RJkrBg5U7TruidEyht1UDKfpdFwQMbimPDY9rsNOIW4A6E4e9QjcrloY8o3FQ_oEkDs2fvjnZpe-8IYIcIOVDmAPFyzAeWHuurlK958OULhXsupGXHfK5pUMtTd4Wgu_Ufs2S9CKQWVRnPhNYb8Z1RE8jIBpTsHUlb0nLsWyF6HUW0PfcZJmLFWiitomS_vpe19b26kjcmiZz-kJFsJ39-OGpu_igOSthrch2-x7if3y4QWh5Aju-JI-jf3k_5AhK-WT4-II0l5C2tIeHLCCByhSc9ocMl9KzisRM-DwX6SBrwYJxhpBAFRC-SKM1XRLHvVXDRgqqJBlZ1QOBbS2MX85r-rnab7DZbW8xsf59Vwt3owgEIK4wdegNXpkoiGKNUPubddhNO227G9euRPGDPE04rn7LdqeG3yvhCrtDXgP9KzGJytPAbEkljkcT1_B2BY3TK94cqJez6p_ft-9kXMMxwQ6I-vWq1UgCuDagMZuFP_Rf2cYhOy5quydhlCYJ7Xwg2WynAfMdYiDjdTpEHNl2fRQ5J91GlrROSm2b6oW67sw_kEK5XQh7G8woJJTgfWt1CJW8vlMbLrvEpoWeHoQTKoSSVLC0yPW6rrokER-jC4S2vXLUr4pjLudF_Vj8zM19qlDaMWvtjjhHFSbJdOglmE3Uhc3trl-ijpbA6Pdl-sGMyTXOw0lFrVY",
+    "tag": "KWCJGbZv93yQQnaY9QOH4g",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "key_count": 2
+}

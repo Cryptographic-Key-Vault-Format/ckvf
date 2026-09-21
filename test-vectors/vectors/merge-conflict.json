@@ -1,0 +1,9 @@
+{
+  "id": "merge-conflict",
+  "description": "Different current MSK is a hard merge conflict",
+  "expect": "fail",
+  "error": "ERR_MERGE_MSK",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "a_msk": "lxU4PNRzZktzINGySXgZa1yRdY7I5CRDj6LwyiHQ0TU",
+  "b_msk": "xE615fNs87kCobQDr7H_hjInfR3ESRMEG7eiY_lMsGM"
+}

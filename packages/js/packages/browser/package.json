@@ -1,0 +1,30 @@
+{
+  "name": "@ckvf/browser",
+  "version": "0.1.0",
+  "description": "CKVF browser implementation using WebCrypto and hash-wasm Argon2id",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/browser.test.js",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@ckvf/core": "0.1.0",
+    "hash-wasm": "^4.12.0"
+  },
+  "ckvf": {
+    "specification": "draft-0.1",
+    "readVersions": ["1.0"],
+    "writeVersions": ["1.0"]
+  }
+}

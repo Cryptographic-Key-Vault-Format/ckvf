@@ -1,0 +1,11 @@
+{
+  "id": "dns-identity",
+  "name": "CKVF DNS Identity Proof compliant",
+  "spec": "draft-0.1",
+  "container_version": "1.0",
+  "description": "Canonicalize DNS Identities and compute identity_id as specified. Prove DNS ownership using the dns-01 profile security properties. This is not ACME.",
+  "requires_profiles": ["core"],
+  "required_vectors": [
+    "dns-identity"
+  ]
+}

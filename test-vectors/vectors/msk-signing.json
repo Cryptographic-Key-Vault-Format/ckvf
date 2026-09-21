@@ -1,0 +1,31 @@
+{
+  "id": "msk-signing",
+  "description": "Valid MSK signature over JCS(body)",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "envelope": {
+    "body": {
+      "protocol": "CKVF",
+      "protocol_version": "1.0",
+      "operation": "COMMIT_VAULT_GENERATION",
+      "identity_id": "iJ6H_APQR3gjpznyaVVXUKP9lNrP0WlFib8rxO7we1U",
+      "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+      "generation": 1,
+      "nonce": "-oC9MImvzfFiuGJLHEIVHXAKO38bh1eYppyZHgAXER8",
+      "timestamp": "2026-08-17T00:00:00Z",
+      "payload_hash": "MUPFlw1q0xG2XgsxT1RtP57JQ2OGgU1j2TDumFuCrt4"
+    },
+    "payload": {
+      "generation": 1,
+      "previous_generation_hash": null,
+      "generation_hash": "I0jXpnOp8LBsEj_4QgzqFxXlspE7Ph2DaCszCPJopdw"
+    },
+    "signature": {
+      "algorithm": "Ed25519",
+      "msk_id": "lxU4PNRzZktzINGySXgZa1yRdY7I5CRDj6LwyiHQ0TU",
+      "value": "62iYKR-mzY-eufZ9B3TfxVq8goUSg6ZpV-KmLfl5PcMCZK4ZtpJ-Q-zLhOFHozxGWq9qzbrWpHp9LfN37TuLAw"
+    }
+  },
+  "msk_public_key": "QdaE37V0jU-0trmBR2y018gmZs8SvbQxaLyZZfStmnQ",
+  "msk_id": "lxU4PNRzZktzINGySXgZa1yRdY7I5CRDj6LwyiHQ0TU"
+}

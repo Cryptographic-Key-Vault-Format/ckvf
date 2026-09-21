@@ -1,0 +1,14 @@
+{
+  "id": "openpgp",
+  "name": "CKVF OpenPGP Profile compliant",
+  "spec": "draft-0.1",
+  "container_version": "1.0",
+  "description": "Store and round-trip OpenPGP transferable secret keys losslessly (encoding openpgp-tsk). Preserve OpenPGP records in mixed-family vaults. Does not redefine RFC 9580 messages.",
+  "requires_profiles": ["core"],
+  "required_vectors": [
+    "single-openpgp-key",
+    "multiple-openpgp-keys",
+    "mixed-openpgp-smime",
+    "historical-private-keys"
+  ]
+}

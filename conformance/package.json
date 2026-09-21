@@ -1,0 +1,34 @@
+{
+  "name": "@ckvf/conformance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Language-neutral CKVF conformance profiles and result schema. The actual runner lives in packages/js; this package publishes profile JSON and results/schema.json only.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "profiles",
+    "results",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    "./profiles/core.json": "./profiles/core.json",
+    "./profiles/openpgp.json": "./profiles/openpgp.json",
+    "./profiles/smime.json": "./profiles/smime.json",
+    "./profiles/email-identity.json": "./profiles/email-identity.json",
+    "./profiles/dns-identity.json": "./profiles/dns-identity.json",
+    "./results/schema.json": "./results/schema.json"
+  },
+  "scripts": {
+    "test": "node -e \"console.log('No runner in this directory. Profiles and schema only. Runner: packages/js.');\""
+  },
+  "keywords": [
+    "ckvf",
+    "conformance",
+    "cryptographic-key-vault-format"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cryptographic-Key-Vault-Format/ckvf"
+  }
+}

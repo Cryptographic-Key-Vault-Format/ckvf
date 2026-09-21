@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vault-container.schema.json",
+  "title": "CKVF Outer vault container",
+  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Section 4.1 is authoritative. These schemas do not replace normative prose.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "version",
+    "vault_id",
+    "generation",
+    "previous_generation_hash",
+    "generation_hash",
+    "crypto",
+    "unlock_slots",
+    "ciphertext",
+    "tag",
+    "extensions",
+    "critical_extensions"
+  ],
+  "properties": {
+    "format": {
+      "const": "CKVF"
+    },
+    "version": {
+      "const": "1.0",
+      "description": "Container format version for this specification."
+    },
+    "vault_id": {
+      "$ref": "#/$defs/base64url16",
+      "description": "Unpadded base64url of 16 CSPRNG octets. Constant for the life of the vault instance. Typically 22 characters."
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "JSON number that is an integer >= 1. Generation 1 is the first committed state."
+    },
+    "previous_generation_hash": {
+      "anyOf": [
+        { "$ref": "#/$defs/base64urlSha256" },
+        { "type": "null" }
+      ],
+      "description": "MUST be null if and only if generation is 1. Otherwise MUST equal the previous container's generation_hash."
+    },
+    "generation_hash": {
+      "$ref": "#/$defs/base64urlSha256",
+      "description": "unpadded base64url(SHA-256(UTF-8 JCS(container with generation_hash omitted)))."
+    },
+    "crypto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aead", "iv"],
+      "properties": {
+        "aead": {
+          "const": "A256GCM"
+        },
+        "iv": {
+          "$ref": "#/$defs/base64url12",
+          "description": "Unpadded base64url of 12 octets (96-bit GCM nonce)."
+        }
+      }
+    },
+    "unlock_slots": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "$ref": "unlock-slot.schema.json"
+      },
+      "description": "Zero or more unlock slot objects. A vault with zero slots is not unlockable; writers SHOULD include at least one."
+    },
+    "ciphertext": {
+      "$ref": "#/$defs/base64url",
+      "description": "Unpadded base64url of AES-256-GCM ciphertext (payload JSON UTF-8, no tag)."
+    },
+    "tag": {
+      "$ref": "#/$defs/base64url16",
+      "description": "Unpadded base64url of 16 octets (128-bit GCM tag)."
+    },
+    "extensions": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "allOf": [
+          { "$ref": "extension.schema.json" },
+          {
+            "type": "object",
+            "required": ["critical"],
+            "properties": {
+              "critical": { "const": false }
+            }
+          }
+        ]
+      }
+    },
+    "critical_extensions": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "allOf": [
+          { "$ref": "extension.schema.json" },
+          {
+            "type": "object",
+            "required": ["critical"],
+            "properties": {
+              "critical": { "const": true }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "generation": { "const": 1 } },
+        "required": ["generation"]
+      },
+      "then": {
+        "properties": {
+          "previous_generation_hash": { "type": "null" }
+        }
+      },
+      "else": {
+        "properties": {
+          "previous_generation_hash": { "$ref": "#/$defs/base64urlSha256" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "base64url": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "base64url12": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 16,
+      "maxLength": 16
+    },
+    "base64url16": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 22,
+      "maxLength": 22
+    },
+    "base64urlSha256": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 43,
+      "maxLength": 43
+    }
+  }
+}

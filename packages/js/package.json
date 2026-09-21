@@ -1,0 +1,28 @@
+{
+  "name": "ckvf-js",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CKVF JavaScript/TypeScript SDK (ckvf packages/js)",
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/node",
+    "packages/browser",
+    "packages/conformance"
+  ],
+  "scripts": {
+    "build": "npm run build -w @ckvf/core && npm run build -w @ckvf/browser && npm run build -w @ckvf/node && npm run build -w @ckvf/conformance",
+    "test": "npm run build && node --test packages/core/dist/core.test.js packages/node/dist/node.test.js packages/browser/dist/browser.test.js",
+    "lint": "npm run lint -w @ckvf/core --if-present && npm run lint -w @ckvf/node --if-present && npm run lint -w @ckvf/browser --if-present",
+    "generate-vectors": "npm run build && node packages/node/dist/generate-vectors.js",
+    "conformance": "npm run build && npm run test -w @ckvf/conformance"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "Apache-2.0"
+}

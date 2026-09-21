@@ -1,0 +1,29 @@
+{
+  "id": "core",
+  "name": "CKVF Core compliant",
+  "spec": "draft-0.1",
+  "container_version": "1.0",
+  "description": "Parse, validate, encrypt, decrypt, password-wrap the VEK, MSK operations, generation tracking, merge, historical keys, short-id collision tolerance, extensions, and fail-closed errors. Does not require OpenPGP, S/MIME, email-otp, or dns-01.",
+  "required_vectors": [
+    "empty-vault",
+    "password-unlock",
+    "wrong-password",
+    "tampered-ciphertext",
+    "tampered-authenticated-header",
+    "invalid-aead-tag",
+    "invalid-json",
+    "unsupported-version",
+    "unknown-optional-extension",
+    "unknown-critical-extension",
+    "short-key-id-collision",
+    "msk-signing",
+    "invalid-msk-signature",
+    "msk-replacement",
+    "generation-increment",
+    "stale-generation",
+    "merge",
+    "merge-conflict",
+    "historical-private-keys",
+    "corrupted-private-key"
+  ]
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CKVF browser example</title>
+  </head>
+  <body>
+    <p>Open this example with a bundler that resolves <code>@ckvf/browser</code>. The module graph uses WebCrypto and hash-wasm; it does not depend on SComm.</p>
+    <pre id="out"></pre>
+    <script type="module">
+      import { createBrowserCrypto, createVault, serializeContainer, TEST_ARGON2ID } from "@ckvf/browser";
+      const vault = await createVault({
+        identityType: "email",
+        identityValue: "alice@example.com",
+        password: "CKVF-TEST-PASSWORD",
+        crypto: createBrowserCrypto(),
+        kdf: TEST_ARGON2ID,
+      });
+      document.getElementById("out").textContent = serializeContainer(vault.container);
+    </script>
+  </body>
+</html>

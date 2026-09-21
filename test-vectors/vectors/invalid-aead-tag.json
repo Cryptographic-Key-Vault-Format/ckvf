@@ -1,0 +1,45 @@
+{
+  "id": "invalid-aead-tag",
+  "description": "Invalid GCM tag fails closed",
+  "expect": "fail",
+  "error": "ERR_AEAD_DECRYPT",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 1,
+    "previous_generation_hash": null,
+    "generation_hash": "I0jXpnOp8LBsEj_4QgzqFxXlspE7Ph2DaCszCPJopdw",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "s2jev5wNAQpnurjy"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "jZFn-Oi2kOiPV-dZ4fU79ZkfvbyuJ0SV3sUVRmbhAm6Pj5MAvh0074rxCp5RlBWXjd3CPnlAycJl_qwYri2bJsiFYsniLF6s60rF_IQdpjFuJ9PNl3H6gPS2f_w1M0vDdh1odzKMFlpgUQMOl5VyyTxJwjt-IUmaaQGQsCo5yhytw_AOKJqqila9wP0bI4lnwUhnMlNi873_UYI-1Qip1KAZOLKQQySGqfoYaT6iE83yivQUJtdiIf_4dVgoLF26fUoo-bPdQfZcFqZXBx5U4Q3cZO-cWfNnEZCUtF0s-9E88l6fNGZuLNKm21I1aebOgB__C3X9RtZRfVELvZlAuly__So97Gawi-ZHojd5c7CApGHrbQI4VW3GXi3St_3xOZYtxbpvMmJG4f6Is6pYmHEjXReT5tkpqqaHjklYCxqK3nwnfsH5If8i07RknvZiccU0WUTIuxRBIRFUdFPoiVk4-QHzRXUuHXt_UiZ-BYR2I5jQt2lTPvP1NKyW4nYeiGjv8bUj2koO4Gjd79oW4I1RKgx-idVmt7NdAWE_t0LhmK0uijPZACOFp-iZH96M-nFh_F66hYBb4K1mnF4A5hik9uiXXlP04gUE8imG8_LC2BgmJjQ4MRuMgO54FNXgdYDqBF-0YOMZjdPMNfWxXi7JkCgr4DIP17PMliIsgRMehS6-vP3OW0tDNHRa_GgHN2P66NindDdyIHdhT9G0XWmn3IUJWsi-llvWow",
+    "tag": "3utAA5Dr3bx6sbsE195p0g",
+    "extensions": [],
+    "critical_extensions": []
+  }
+}

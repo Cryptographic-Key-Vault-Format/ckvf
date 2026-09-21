@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "key-record.schema.json",
+  "title": "CKVF Key record",
+  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Sections 4.4 and 9 are authoritative. These schemas do not replace normative prose.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "absolute_key_id",
+    "short_key_id",
+    "family",
+    "algorithm",
+    "algorithm_suite",
+    "encoding",
+    "purpose",
+    "public_key",
+    "private_key",
+    "created_at",
+    "status",
+    "metadata"
+  ],
+  "properties": {
+    "absolute_key_id": {
+      "$ref": "#/$defs/base64urlSha256",
+      "description": "unpadded base64url(SHA-256(canonical public key bytes)). Authoritative identifier."
+    },
+    "short_key_id": {
+      "type": "string",
+      "pattern": "^[0-9A-F]{4}-[0-9A-F]{4}$",
+      "description": "Lookup hint only. First 32 bits of the Absolute Key ID digest as uppercase hex with a hyphen. NOT a unique identifier."
+    },
+    "family": {
+      "type": "string",
+      "enum": ["openpgp", "smime"],
+      "description": "v1.0 families only. MUST NOT be pq, pqc, post-quantum, hybrid, or similar. PQC is algorithm/algorithm_suite under an existing family."
+    },
+    "algorithm": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Primary public-key algorithm. Community registry string (SPEC Appendix A.3)."
+    },
+    "algorithm_suite": {
+      "type": ["string", "null"],
+      "description": "Registry string or JSON null. PQC hybrid/composite suites belong here or in algorithm, never as a family."
+    },
+    "encoding": {
+      "type": "string",
+      "enum": ["openpgp-tsk", "pkcs8", "pkcs12"],
+      "description": "v1.0 encodings. jwk is reserved and MUST be rejected by v1.0 parsers."
+    },
+    "purpose": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["sign", "encrypt", "auth"]
+      },
+      "description": "MUST contain at least one value. Duplicate values MUST be rejected."
+    },
+    "public_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "maxLength": 1398102,
+      "description": "Unpadded base64url of canonical public key bytes. Appendix C decoded maximum 1 MiB."
+    },
+    "private_key": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "maxLength": 1398102
+        },
+        { "type": "null" }
+      ],
+      "description": "Unpadded base64url of native private-key encoding, or JSON null after authorized DELETE_PRIVATE_KEY."
+    },
+    "created_at": {
+      "$ref": "#/$defs/rfc3339Z"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "retired", "revoked", "compromised"],
+      "description": "retired does not delete private_key. Only DELETE_PRIVATE_KEY may set private_key to null."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "description": "v1.0 parsers MUST accept an empty object and MUST reject unregistered keys."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "family": { "const": "openpgp" } },
+        "required": ["family"]
+      },
+      "then": {
+        "properties": { "encoding": { "const": "openpgp-tsk" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "family": { "const": "smime" } },
+        "required": ["family"]
+      },
+      "then": {
+        "properties": { "encoding": { "enum": ["pkcs8", "pkcs12"] } }
+      }
+    }
+  ],
+  "$defs": {
+    "base64url": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "base64urlSha256": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 43,
+      "maxLength": 43
+    },
+    "rfc3339Z": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$"
+    }
+  }
+}

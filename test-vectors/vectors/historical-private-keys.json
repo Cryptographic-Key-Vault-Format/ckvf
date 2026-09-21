@@ -1,0 +1,56 @@
+{
+  "id": "historical-private-keys",
+  "description": "Retired key still retains private_key for historical decryption",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 4,
+    "previous_generation_hash": "mXqjEjjsTe11wahNeWKTtRlWcVi9jO-oWN1msdxUx8I",
+    "generation_hash": "yewg1t76L6-HpvkQLp8xIvCEC8pYXfXHg-KnXGqMvfY",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "dO4batD2-SkqGMiD"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "bv3I3THDUjMo7W2J3IiYMmco6ysmorZS-MUyObKC-1dj6yxorLEL0vUHFA-HkEZWb0_mm_M8rydKX53e8raMZ77cxWfVAfeLuBEi9TwpBDuwxjsbDaF2EutvE_sD0QNy7K67Ue-YPMWoIAbYpEXwxjdKqSenVl4VtnzNpm7-OWX5bzjb_g-OA049out6WMbjDB0VyWUgoxyUnEHxe1_JXqg7I3auR5owzicTvR9vZ6vwIoE0h5ecrDvMWuzDmvi2euOlYGUkowFShFcLPQDPAzlfugkfy8ZuWggi5vuvwSPYti8tAla1PkYgDMZfGhxqgXJl-QH8p_boglXAi0O6IqlP4GASfofyrI9XOvuwVzj-bEYqJ3-tINIMq4_HhWf5KOYY-SN8MVyAtl6ifjNd7k6J3Te21Pfsm6_WDBPSelKkCQ6u16vmRIvaH8EsBieCRvTu-9_4GsFYGfl6fp9kEIqKWa0bP4MzQBBvKjmV8eBkPIHZjpIWEmfpFD9xNDO0_XlbkU1wMaTXJ_zlQ7R7f2mSpz8kZq49PqsEMaPEuSzurFU-UXcc41ZPbgWAQOdRLonl84TrbbT66qCG30y8DcrlC5gVUElw4t951Of3nmEpDKIiWqwBoAHlyoXGDq4_4BhaMrZoRJzNpfDP4g_Fsqs-bvLBMj_eCbzeQHzH4yIsb2SQzuuVH3KDRxwhs0BG7FB8QOPmEY3klpFXiRjI38LUjWu60MNhnD1zciF2qhCUbPyNZzRQ5sf0_NE3gcqrKP0bT8-N_ADaYNUXKbWCuF1H_KE4WZiL30MF7W2GwY2fwZOGRkqY4h4BOgUVaJSnksPzIcH7Wd63AEQ-mu587ixVGm_ugXtiIEposzexlF0isOrcLD8l0kMwncTJTpRcNjUCtxvWSO_IepYGXPiHkSK8ZkW88v1bzuQ3V04rd6X6u9aqp6JIrEZetpGSTtvajcLCDjUnREPfS5C9013tKKUtMuHy3eAFUI3vyWGmrd4GNgZBGRKqOaKRdzaq-HfojThPoIGIEspfJGq2AntikT4lattb9TlgwRt6OFVyFTlvZ9bpDB_P82-LuBvnbk6t7PBZUSfZFBGPL8ac_Y95473YfQvai0qeg-l6jIMVhycTysxZutHhPWEJg6fdlakPBJ2mCMtZudCsK54pDWjrEypQJNVErH2sO8k4Xosh34cWkd8ZDpQ4poj2JRWnK7BnO0MAnIGH0--Cc6JaCtkCZdzQamKysqIbJ4ZzuqMfvwkMhzraa74ALJldLeCgmkwVQAIxQCO_-5izmw0McwQB3TGwJ78e_d3Tc1SN2FDDree7CvodHW38I3smae5rg1sSL822r1Prz9hbj6taJIn63rNgN0k8vcmJbpG8YeGhmX9yh_j73SkqDUE5i0Zk5WHK-6Ca3q2iZl-58lM3qWSPGYf1djGI8uO_vesODG84pWDIFK1LKBgspgvebXUKm9HLIRJSos3kWLE25FBZpLUlSV3qbhrV5wzjluS3T0kTGlqXlNELTF1dJMPsqupbbE8S7AemQv50RDkw20qcpFGBn9kXWqUeMxnMHs4dhXz6F74vS7FzosVMSLECs4B6pJTjJzDYaF-X6J7EuYLTNFM_8LUVTDyyeBDoB3wRqbum6n3dlf2E7UBHgfhXUa0VFWILCQMHwF3HnRdHvEgTXga7VC1XSymshHQb-RlUpK9ljP2adQ4EMgpbtL1Kfygn_8yo_f8B3ZJOl1cP9gHYi3J2IkDtgbxi51lAASuY4UoRGwQPhg2N7oYvZlf3rpQ1dv6QSZkDw57CrAEZQW_tnn777ZzlS09eZjHESLPC98hKPo8BN_XrayYmEJZLKZjwyMUKI6AUgwOrokDgUxonrVunlQ62Yzxg7bRcYy_1LPGtMFMNoo0t4ADpApeP9Ml-R8SmCj6gSA__BpJx",
+    "tag": "oEQGnQ4h8PHQlDWmOihqhg",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "statuses": [
+    {
+      "id": "SZAIs06btfhzUIbITvIV0v1V3cO4sqNBiAdxvHTWkrY",
+      "status": "retired",
+      "has_private": true
+    },
+    {
+      "id": "MbmiAEJyU2ZnXPHRaxpIf8ceBct-WUwZyty009un7YE",
+      "status": "active",
+      "has_private": true
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "version": "0.1.0",
+  "specification": "draft-0.1",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "kdf": {
+    "alg": "Argon2id",
+    "m": 16384,
+    "t": 2,
+    "p": 1,
+    "key_length": 32
+  },
+  "vectors": [
+    {
+      "id": "empty-vault",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "email-identity",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "dns-identity",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "single-openpgp-key",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "multiple-openpgp-keys",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "smime-pkcs8-key",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "mixed-openpgp-smime",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "historical-private-keys",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "password-unlock",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "wrong-password",
+      "expect": "fail",
+      "error": "ERR_WRAP_DECRYPT"
+    },
+    {
+      "id": "tampered-ciphertext",
+      "expect": "fail",
+      "error": "ERR_AEAD_DECRYPT"
+    },
+    {
+      "id": "tampered-authenticated-header",
+      "expect": "fail",
+      "error": "ERR_GENERATION_HASH"
+    },
+    {
+      "id": "invalid-aead-tag",
+      "expect": "fail",
+      "error": "ERR_AEAD_DECRYPT"
+    },
+    {
+      "id": "invalid-json",
+      "expect": "fail",
+      "error": "ERR_JSON"
+    },
+    {
+      "id": "unsupported-version",
+      "expect": "fail",
+      "error": "ERR_VERSION"
+    },
+    {
+      "id": "unknown-optional-extension",
+      "expect": "fail",
+      "error": "ERR_GENERATION_HASH"
+    },
+    {
+      "id": "unknown-critical-extension",
+      "expect": "fail",
+      "error": "ERR_CRITICAL_EXTENSION"
+    },
+    {
+      "id": "short-key-id-collision",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "msk-signing",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "invalid-msk-signature",
+      "expect": "fail",
+      "error": "ERR_SIGNATURE"
+    },
+    {
+      "id": "msk-replacement",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "generation-increment",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "stale-generation",
+      "expect": "fail",
+      "error": "ERR_STALE_GENERATION"
+    },
+    {
+      "id": "merge",
+      "expect": "pass",
+      "error": null
+    },
+    {
+      "id": "merge-conflict",
+      "expect": "fail",
+      "error": "ERR_MERGE_MSK"
+    },
+    {
+      "id": "corrupted-private-key",
+      "expect": "pass",
+      "error": null
+    }
+  ]
+}

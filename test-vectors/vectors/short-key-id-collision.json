@@ -1,0 +1,20 @@
+{
+  "id": "short-key-id-collision",
+  "description": "Short Key IDs are lookup hints and are not unique identifiers",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "short_key_id": "9C1F-061E",
+  "keys": [
+    {
+      "canonical_public_key_hex": "434b56462d544553542d4b45592d3332353931",
+      "absolute_key_id": "nB8GHglFfN2BntVQCPt0QjJX5YORHXK9eZ-sRarBYOk",
+      "short_key_id": "9C1F-061E"
+    },
+    {
+      "canonical_public_key_hex": "434b56462d544553542d4b45592d3335383331",
+      "absolute_key_id": "nB8GHgri6_OM_yz-C4g70FEsV0AUDw15JmwNoTMDGiA",
+      "short_key_id": "9C1F-061E"
+    }
+  ],
+  "note": "Applications MUST try all matching compatible keys. absolute_key_id is authoritative."
+}

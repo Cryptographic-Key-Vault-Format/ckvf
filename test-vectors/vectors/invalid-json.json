@@ -1,0 +1,8 @@
+{
+  "id": "invalid-json",
+  "description": "Malformed JSON fails closed",
+  "expect": "fail",
+  "error": "ERR_JSON",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "raw": "{not json"
+}

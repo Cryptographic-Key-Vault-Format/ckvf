@@ -1,0 +1,15 @@
+{
+  "id": "stale-generation",
+  "description": "A writer on generation 1 must not silently overwrite generation 2",
+  "expect": "fail",
+  "error": "ERR_STALE_GENERATION",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "head": {
+    "generation": 2,
+    "generation_hash": "bBwLV6ZQic1JoXwZBrNxc4Ws4bhMsmax39f3xw5gQ0E"
+  },
+  "stale": {
+    "generation": 1,
+    "generation_hash": "I0jXpnOp8LBsEj_4QgzqFxXlspE7Ph2DaCszCPJopdw"
+  }
+}

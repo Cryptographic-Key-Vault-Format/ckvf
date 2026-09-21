@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "extension.schema.json",
+  "title": "CKVF Extension object",
+  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Sections 4.6 and 13 are authoritative. These schemas do not replace normative prose.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "critical", "data"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(std|exp|priv):[a-z0-9][a-z0-9._-]*$",
+      "description": "prefix ':' name. Prefix is std, exp, or priv. name matches ^[a-z0-9][a-z0-9._-]*$."
+    },
+    "critical": {
+      "type": "boolean",
+      "description": "MUST be true iff this object appears in a critical_extensions array."
+    },
+    "data": {
+      "description": "JSON value defined by the extension specification. MUST be present."
+    }
+  }
+}

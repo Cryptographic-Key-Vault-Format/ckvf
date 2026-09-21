@@ -1,0 +1,12 @@
+{
+  "id": "smime",
+  "name": "CKVF S/MIME Profile compliant",
+  "spec": "draft-0.1",
+  "container_version": "1.0",
+  "description": "Store and round-trip S/MIME-related private keys losslessly (encoding pkcs8, and pkcs12 when claimed). Preserve S/MIME records in mixed-family vaults. Does not redefine RFC 8551, CMS, or path validation.",
+  "requires_profiles": ["core"],
+  "required_vectors": [
+    "smime-pkcs8-key",
+    "mixed-openpgp-smime"
+  ]
+}

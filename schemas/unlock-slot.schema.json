@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unlock-slot.schema.json",
+  "title": "CKVF Unlock slot",
+  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Sections 4.2, 6.3–6.5, and 10.4 are authoritative. These schemas do not replace normative prose.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slot_id", "method", "created_at", "wrap"],
+  "properties": {
+    "slot_id": {
+      "$ref": "#/$defs/base64url16",
+      "description": "Unpadded base64url of 16 CSPRNG octets. Unique among slots of this vault."
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$",
+      "description": "Community-registry unlock method. v1.0: password-argon2id, device-wrap-a256gcm."
+    },
+    "created_at": {
+      "$ref": "#/$defs/rfc3339Z"
+    },
+    "kdf": {
+      "$ref": "#/$defs/kdf",
+      "description": "REQUIRED for password-argon2id. MUST be omitted for methods that do not use a KDF (including device-wrap-a256gcm)."
+    },
+    "wrap": {
+      "$ref": "#/$defs/wrap"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "method": { "const": "password-argon2id" } },
+        "required": ["method"]
+      },
+      "then": {
+        "required": ["kdf"],
+        "properties": {
+          "kdf": { "$ref": "#/$defs/kdf" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "method": { "const": "device-wrap-a256gcm" } },
+        "required": ["method"]
+      },
+      "then": {
+        "properties": { "kdf": false }
+      }
+    }
+  ],
+  "$defs": {
+    "base64url": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "base64url12": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 16,
+      "maxLength": 16,
+      "description": "12 octets, unpadded base64url."
+    },
+    "base64url16": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 22,
+      "maxLength": 22,
+      "description": "16 octets, unpadded base64url."
+    },
+    "base64url32": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 43,
+      "maxLength": 43,
+      "description": "32 octets, unpadded base64url."
+    },
+    "rfc3339Z": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$",
+      "description": "RFC 3339 date-time in UTC with a Z suffix. Numeric offsets are rejected in v1.0."
+    },
+    "kdf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alg", "salt", "m", "t", "p", "key_length"],
+      "properties": {
+        "alg": {
+          "const": "Argon2id"
+        },
+        "salt": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "minLength": 22,
+          "description": "MUST decode to at least 16 octets."
+        },
+        "m": {
+          "type": "integer",
+          "minimum": 16384,
+          "maximum": 1048576,
+          "description": "Memory in KiB (RFC 9106). MUST reject m < 16384. Appendix C default maximum 1048576. RECOMMENDED 65536."
+        },
+        "t": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 16,
+          "description": "Iterations. MUST reject t < 2. Appendix C default maximum 16. RECOMMENDED 3."
+        },
+        "p": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16,
+          "description": "Parallelism. MUST reject p < 1. Appendix C default maximum 16. RECOMMENDED 4."
+        },
+        "key_length": {
+          "const": 32
+        }
+      }
+    },
+    "wrap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alg", "iv", "ciphertext", "tag"],
+      "properties": {
+        "alg": {
+          "const": "A256GCM"
+        },
+        "iv": {
+          "$ref": "#/$defs/base64url12",
+          "description": "96-bit wrap IV, unique per wrap under a given KEK."
+        },
+        "ciphertext": {
+          "$ref": "#/$defs/base64url32",
+          "description": "AES-256-GCM ciphertext of the 32-byte VEK (tag stored separately)."
+        },
+        "tag": {
+          "$ref": "#/$defs/base64url16",
+          "description": "128-bit GCM tag."
+        }
+      }
+    }
+  }
+}

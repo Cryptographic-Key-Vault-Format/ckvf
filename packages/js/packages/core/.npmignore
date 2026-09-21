@@ -1,0 +1,6 @@
+**/*.test.js
+**/*.test.d.ts
+**/*.test.js.map
+generate-vectors.js
+generate-vectors.d.ts
+generate-vectors.js.map

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "identity.schema.json",
+  "title": "CKVF Identity",
+  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Sections 4.3 and 7 are authoritative. These schemas do not replace normative prose.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "value", "identity_id"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["email", "dns"],
+      "description": "v1.0 identity types. See community registry identity-types."
+    },
+    "value": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "description": "Canonical Identity value (Section 7.2 email or 7.3 dns). Appendix C limits Identity value to 2048 UTF-8 bytes."
+    },
+    "identity_id": {
+      "$ref": "#/$defs/base64urlSha256",
+      "description": "unpadded base64url(SHA-256(UTF-8(canonical_type + ':' + canonical_value)))."
+    }
+  },
+  "$defs": {
+    "base64url": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "base64urlSha256": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 43,
+      "maxLength": 43
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "email-identity",
+  "name": "CKVF Email Identity Proof compliant",
+  "spec": "draft-0.1",
+  "container_version": "1.0",
+  "description": "Canonicalize email Identities and compute identity_id as specified. Prove email ownership using the email-otp profile security properties. OTP transport is not interoperable; no vendor OTP API is required.",
+  "requires_profiles": ["core"],
+  "required_vectors": [
+    "email-identity"
+  ]
+}

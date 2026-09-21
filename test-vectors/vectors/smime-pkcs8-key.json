@@ -1,0 +1,63 @@
+{
+  "id": "smime-pkcs8-key",
+  "description": "S/MIME PKCS#8 private key stored losslessly",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "RfUjYt1HDGSAQxTwUvjkvA",
+    "generation": 2,
+    "previous_generation_hash": "7u_I6ioLnvWwCUFHYUF1eOTzKcE7NvfRyvSeQ3d0kAg",
+    "generation_hash": "ssE21aetgvv2-_2VzHzP8_-ajKLjV0urLl0OzrEL1-s",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "0ja4pko0PWZlDuFV"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "sGYRlZsUqan3Ov29ceyYsA",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "o6p30DuU-Q5XCWLRW95xoA",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "wcB1chyTfbskEPnw",
+          "ciphertext": "-Kgo-jtTzl2XXWoF4k9jfjB_1zB_wbFo3CA6lS1MJQU",
+          "tag": "Hw_D6cdzTIeYoJAowLdp_Q"
+        }
+      }
+    ],
+    "ciphertext": "c4Ec3_tBdc4SAcnWP7fAx_LrQE0wnf-l-WOWKFLnyFEKZe0vTsGD_1sJtXhZ7dfpRcyrc6DQ9KCTD6eKJwjBS8wOpZ6JTfdRHSmlF7p66rroig_kUZPisgrMi6x7gn91VJ0-6TDzNsv9DvKsqjbxs05thTzDTNoKZZufh8Cc-0CRzTM853MG2OmkDA0f7p_-ESNUPcR6mp69OtwQSXcM_w5nBVaguMUHlxzeozjN7vpzgzUkfVNO_lUh-gobBzs9jIW4Y0bAqyuscgekuelc2aKloYCbpH5OWpfrYv_kjMT_BFiL0GNirGdv2k4H8jXLNh1MY4LbuNToOauTQ5Ibot1a6cRo3LZFvhKf9gR4Kc3Myh0Dih4dLn-Rqc9B7eBQmBl02dFYrkPzzl3L29CVywCORuzof6ee0o9F9RlypaVEaUCxm6K0G1sY9g9yv3-v9Eq2Xmd3eOtNnETLML2aRDHyqfETN_uLnIRf3fRHE3zMoTxLmtwS0oTx3LNmlJVXawuwYlskTb46xsXZw-dJyTedgnr9v_IF5YpKJFpFeDFrlQbYOFZay5OMVzaDnZZhKBDKM0dBtnJv0qN-UiC9wbIufxSj7rnDIIGLQ1dq0rUZTC0wO3KIrVcwfHSUqwvMJJ6DpCtFnNldsYVxEwyaPkvaqp5n_gq6CRmrcRkRYuQOUzNDLRWm0m0o1CEBCePUZt8qbS2wcnQJak9lImeC9qbNN8XPZi1ygeUPaghystoD8Ol54A5vZgSuvJcmLAFg1-a4OxpdfXJCTrdXTl7PIiWSAUEL2NmWisUOfP2damvco8Sk6qvCdWxJeuvB9mOYUtULO9f-MfGaFvGqP9wyf8gGJoJYFtzgj6WXsucTWUdZdFC0N1PedF7EiKQsmt9I1X8gbhb3au5-CsFm8hVqu39cdEvLqw6PwFdY-knjbezjrZULsRvtskKnnm2Ye9ecLviymRC2hjUjWROIj1vB82_8Pn7FSCvxL64G3kTnHBS-JiDskadvmdd56WQ6nd_7Xd2OJceWSDgWT9gg_L-hpmfQr0Yw5mvpe9yccynjE3Y09H7Vi9G6OUqqglw-w4fF3sNW3Rveswu4Lo7ALvNnjZ2sLqeNrjWjUqgbptnK4RXeTkRBAa4Wm1b2XKuJeQ39WrZS4FSYeTnxj5ENxo6WcQH7ASdgFnz-hdzsMfobGtdjUQTM6uAO9kqFy9wuqp7-7D8lPyscI0cJbOyDJB1iO-c7Mb2B1nBLVzlo-_iuMzQ7YT3KmaRgGzGQ8V7xJkwopGB6C2sTf9CYI2vNKvA",
+    "tag": "U3b1emGJ4wYnd9erUEcdQg",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "keys": [
+    {
+      "absolute_key_id": "czgxgsWKOqiPHLb0Rf-gB5JVS-T8qA2hhho97384hr8",
+      "short_key_id": "7338-3182",
+      "family": "smime",
+      "algorithm": "Ed25519",
+      "algorithm_suite": null,
+      "encoding": "pkcs8",
+      "purpose": [
+        "sign",
+        "encrypt"
+      ],
+      "public_key": "MCowBQYDK2VwAyEABaoYxjqRxcTqnShQC4pRrlxTkZi3m_gbYbdXbE3oyEA",
+      "private_key": "MC4CAQAwBQYDK2VwBCIEIByZY7VmR08YMUe3du_rwWWCjDFGQL1nqc2rm4TWx8ZH",
+      "created_at": "2026-08-17T00:00:00Z",
+      "status": "active",
+      "metadata": {}
+    }
+  ]
+}

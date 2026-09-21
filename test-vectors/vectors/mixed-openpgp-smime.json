@@ -1,0 +1,48 @@
+{
+  "id": "mixed-openpgp-smime",
+  "description": "OpenPGP and S/MIME keys in one vault",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 3,
+    "previous_generation_hash": "bBwLV6ZQic1JoXwZBrNxc4Ws4bhMsmax39f3xw5gQ0E",
+    "generation_hash": "mXqjEjjsTe11wahNeWKTtRlWcVi9jO-oWN1msdxUx8I",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "PObWULIsWFaKOfoh"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "NyqwJ3docZ1RAXHXUCXvdIU6DtnzJT2sUrndMkZhVRZkfOCLxnOh_X65cWuy9SDlMSkRRDfhUekN9vhFw-hXVB3vNiKBZShBz-z62ZjHWJG-x5Okgcukno3qWxx7KLsfgWMDbt06PKmFwM6xDg0tT8qhq_W0thU9BXshkvpWtNXEIVK6v4xUGG6lO8vk1lq23xDlKoGSX6_uapx689RCNJQNuEAyjK1dT-H_sL18onGvzuGjrEJO2Nf9-vPV6Yge5N86Ck2FnN8rp1jQZuwAdPLB5QIgEX4qhWrhup4zRERcmW3OjdjU5oFGb0y6ga9EqI_9LwBnVQ13GE-qyweG56_Ufu--xZftM2au07SwbTaR3yAcMyozWvRYc1Al_2UHclsbm5Ovl00C4mQy19OSBvCsYEpcHIewg60U29TRz8cgvZ2GMN7828rgTREu_jdt46Lepy5DD0G7JKPsvhjlf4xcBSindOW36PaJPLOshmeVG_47j552Im7ny1Bx7IU_oYhXIVFZqlYUQMrwqzI8WcakupFXN5FhK-oWZSerkXk-euIFS458ub3g5cgn8OLU4iDpub_mb1Ho72vTlHKFidknGGR6IYOG-BYm-MlyvGSzuC2LHs83lC3LK6a7yP7eVu-0o5BubsK4IHE9e-QPTZs-qrl32Avm7G-BdBD71hz6M0zY4Pl_rQOOTljNb4Eww3QGgE3bHDJ8s6IxOS1Gk56olti_LGyN9tCpBgUYLJgjlc-jV50Xs1OHp7x9RWJr1gAtjIfbKn0FAO2LcI7pTaTP6b2AYCHEcJNvDf8zfG5WxhHAaOvzUbrZolYw2xMV3E2tbXYJibp3kBQBW-FQDvg5geUoUOZj-tvh-8pL4UHpH26mW4f8viJJHh5it-4A8BNXDiObbldfFivrLxxdz5RFv612UZBIPTdcKSBE7okoJCwnUOmxFZg_N6kLjs45rLwqzagmcKbovJciEVID61BjHtnMasPaDvYmEyiSLxtc7kDcS1hSP4A9J9ie6nW4IkeN1dvwUX7RiPq7fEXqme0m0MMjSQUIIKKS_CAMiczXyko3seSIdsomptrksgLxebTEhuCW_tEl5Ki2dK1fDtXZzF2QyB4rtIXpRlaZ5HZJNv84a4Jwelb94uKMLdr_B-GHZEouXdenFmod96Tyor7RQZXYQq8dtggafsjAJxqvYypDlPjWzkvAUfcSJByVOT-SFK_TJ523azvqMCdonWbP0dF-8LT7mIjqytTW7DsHJC-By3e2nWtL6irc_WbT29z1kGZpXXGxH4Sjcz9tY5AURcKpQkyMZLmsPtgBFcJrEDCPwQNMW5gNvL6uPNdj6d-LH1AjUU10QxgtS7FtSJGIIxb44Q0ab6X9SXBfqovULnBiOPU7E248EydXSpShCZ5zlq5eJW19d4ly5UuyA5oVMfoisGPIGxoQ1UtoLPlXce3RfAW0jdWB_wOPJsyLH_BMLvpAIsr4EqAvZtCpG9dOyxm4_SlWeAtl4-2wMLNR_yTEa2568ZST3kxgPZgRuDaev2rT_oUm6Cfpsqz9BP_dNTswKNIXli5qXdIKgHfesBGmiLq3j5MSLhKsRnuAX-YJXU5eiLllJD95sx1a9ko27pT1Epz065H7VFZo7EpkHC0hrxspqFMlxjMJ4DcVBcJdbSLGagJweR5zdIkdYN0Pgc-YfW-cnJZukLxNZBHDJtmVzLpMZox2kVlfZ73CA1xhEmXIP6IGk4mCp9gxOpRfdEUoFf53DeAAb9kfFUI5_FJaNm5esvojTtGPpGw0FMH1pogLjkVT8vuTP398yUh7Ap3RtNTxq6orSYjkIDJD2lJbzhgmmb9kOR6IOi5QVtvNtnNxHGBtSSQu6WhM2klYwFBpeJZ4YubxfLCN50CFaGrxqK2FjS0g70Ajnse044mPyH4fOks",
+    "tag": "KlGZ5AT34djx1hqB6y98dg",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "families": [
+    "openpgp",
+    "smime"
+  ]
+}

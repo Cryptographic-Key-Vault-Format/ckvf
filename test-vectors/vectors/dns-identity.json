@@ -1,0 +1,21 @@
+{
+  "id": "dns-identity",
+  "description": "DNS canonicalization, identity_id, and dns-01 challenge name",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "cases": [
+    {
+      "input": "Example.COM.",
+      "canonical": "example.com"
+    },
+    {
+      "input": "example.com...",
+      "canonical": "example.com"
+    }
+  ],
+  "identity_id": "LpMoG_ozO2qxNonqsDwgJUBJEvma97aY8Z9q1njrZ-M",
+  "challenge": {
+    "name": "_ckvf-challenge.example.com",
+    "value": "kcYBWn7eM_HzK47dYQ7pbRJ13UOd-8zdi9_WSAAR_LY"
+  }
+}

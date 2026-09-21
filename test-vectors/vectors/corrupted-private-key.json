@@ -1,0 +1,45 @@
+{
+  "id": "corrupted-private-key",
+  "description": "A payload whose private_key bytes are not a valid native encoding must be usable as opaque storage; applications SHOULD fail family-native parse",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 2,
+    "previous_generation_hash": "I0jXpnOp8LBsEj_4QgzqFxXlspE7Ph2DaCszCPJopdw",
+    "generation_hash": "bBwLV6ZQic1JoXwZBrNxc4Ws4bhMsmax39f3xw5gQ0E",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "fp6d1S2IpcX-P-DH"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "GSB-bwLQWUHesTK8KFSTSWinT_lNa0N-dXqf9lcUNzUYYiwytCcXfGo7W1eaU2HbLAOLFqz15xMTv6XddgDh42uGQWGGo2lIddLZ-6gIbz1p8u3s_vkX0IU6NBJqIybhvTpSO4AVeGZl8T5SkE1scaPNHRyBvlgY14wXQjmT6EQbbSvNTcb3P9jnOVHVy0GkcgJ9-fcB4yi5F3PzZfsQuAUexKZw9cYbPoSZvN5IFGI272_QYEsqADOInaBBjKsl_dq-KQ4gRJ_z3yhRpAJRvvYYBu_u-7GCvjkmF58h_DI0PIN1ryJecXcjw2ACIok6HFshnlevcrvkdfSRkNElEmahNjvyAGpZWL4aCfrK-skgZtqG1U26Ok_UXNo2c-XCJQ1hvz1mgoYC3BhfjwTaBfqpPVKz2FHVAQ4e2AXOKfX5wWEzEnbUMu-pgKlEqQ3v4kv4MM4kkPyRDeEdglGZBqFHC2VbOB93LLJ91esGcNOseT1kau3Cew2tMIAuzSQIFbrgO9y40V5wiLWE6ld3N5zDsRawu90qmyDtnkyqQ9AOcMhgmPtwdGVsFTXHczdsHp69fYallLB9Yf2rUWq4tfuCZWKHhuQBV-1NsgcrgyPWpKqaScxl-qQtmhrDnvTjfJGe4k6XHyR5oFkuUHXn4SMCK4qHo61zUOxTNuIIPjgiL3UgA19YxqV8ISC_PEOQJlo8B0TaSBY63sqk6kVSKvcn50vujlRjsms58UoMItTC8OICAwP03SjEfSD7BT4UQ2NqfYebp8AX-kz0vurSqTqBP6dtAlI6RT2hz37Fd3bOwwL46tWb6ZdieEz8L5FrXBywINJoKqQsORWWcV5ZZpCA4jJQk354SZLc0GcxllEi3HOr2GG994e7WvVkcdDeYiPT2lSsVK4tInuv3UWtFFIR1_o7uX0cKzyMO736D80STUrKQf-sdJ2H10ofyfWYQ4_2HrezTrtVhlq_ZLxOOr8cqaYXIBm3qulaySXpHL32bOqM7RGHbFZ9NsyDtMsv6bKcDDvvTqubQRUOFoJyRO0Tnq-1uNvUXZim_JBlxS4_8KX6TtHnnhr_-pepddKYfwJyqtpeLNAzR2QovATtzv49qLR0a2AudOsVNWSIFtOp9qvKr5O3pm05mN9ZWsDMhHzZmQyVf2dgNFAaWO3GlXxb_sULW6irYcuToh6Q-Ppd08KCMCnirFQvx0E-5QHPnE8gWMqxXtf5Xn1GLXZGSG1EeKJfV17WPcsvqQK2Mmt_8d-CCodl-CyVffPpaPovWDZnib4C7RPFKupKSW8WCd9v4UubQ2Ok7qXpedH4WUvGtpdny2rXZdzH37hywXy-nHBU6KcFo_KUggzrsw",
+    "tag": "hR6RNUyn-r5u8lS5nBcbVQ",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "note": "CKVF stores native encodings losslessly and does not re-validate OpenPGP self-signatures."
+}

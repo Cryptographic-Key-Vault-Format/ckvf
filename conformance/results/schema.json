@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Cryptographic-Key-Vault-Format/ckvf/blob/main/conformance/results/schema.json",
+  "title": "CKVF conformance result",
+  "description": "Machine-readable output of a CKVF conformance run. Profile object keys MUST be claim names, not profile ids.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "implementation",
+    "ckvf_versions_read",
+    "ckvf_versions_write",
+    "timestamp",
+    "profiles"
+  ],
+  "properties": {
+    "implementation": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Implementation name and version, for example 'example-sdk 0.1.0'."
+    },
+    "ckvf_versions_read": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Container versions for which canReadVersion is true."
+    },
+    "ckvf_versions_write": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Container versions for which canWriteVersion is true."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC time the run finished (RFC 3339)."
+    },
+    "test_vectors_version": {
+      "type": "string",
+      "description": "Pinned test-vectors VERSION (not main)."
+    },
+    "profiles": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "enum": [
+          "CKVF Core compliant",
+          "CKVF OpenPGP Profile compliant",
+          "CKVF S/MIME Profile compliant",
+          "CKVF Email Identity Proof compliant",
+          "CKVF DNS Identity Proof compliant"
+        ]
+      },
+      "additionalProperties": { "$ref": "#/$defs/profileResult" }
+    }
+  },
+  "$defs": {
+    "profileResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result", "tests"],
+      "properties": {
+        "result": {
+          "type": "string",
+          "enum": ["pass", "fail", "skip"]
+        },
+        "tests": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/testResult" }
+        }
+      }
+    },
+    "testResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "result"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Test-vector id from test-vectors/manifest.json."
+        },
+        "result": {
+          "type": "string",
+          "enum": ["pass", "fail", "skip"]
+        },
+        "error_code": {
+          "type": "string",
+          "description": "SPEC.md Section 15 code when the test expects or produced a failure."
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "email-identity",
+  "description": "Email canonicalization and identity_id",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "cases": [
+    {
+      "input": "User@Example.COM",
+      "canonical": "user@example.com"
+    },
+    {
+      "input": "  alice@EXAMPLE.com  ",
+      "canonical": "alice@example.com"
+    }
+  ],
+  "identity_id": "tmwIJmeStJDSo9giG47rc8MKlVNxXPBKhG1GIcReptA"
+}

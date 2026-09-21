@@ -1,0 +1,33 @@
+{
+  "name": "@ckvf/core",
+  "version": "0.1.0",
+  "description": "Environment-independent CKVF types, identifiers, merge, and vault logic",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/core.test.js",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "ckvf": {
+    "specification": "draft-0.1",
+    "readVersions": ["1.0"],
+    "writeVersions": ["1.0"]
+  }
+}

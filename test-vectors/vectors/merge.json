@@ -1,0 +1,45 @@
+{
+  "id": "merge",
+  "description": "Divergent key sets union on merge",
+  "expect": "pass",
+  "banner": "TEST KEY — NEVER USE IN PRODUCTION",
+  "password": "CKVF-TEST-PASSWORD",
+  "container": {
+    "format": "CKVF",
+    "version": "1.0",
+    "vault_id": "m97DoVm2LxjYFhGglp2e0g",
+    "generation": 3,
+    "previous_generation_hash": "SE7hXJfE8j1-rw0gOw_aMiy_Ps7kea6QKXXrsfhsurs",
+    "generation_hash": "t7rjDGixHQAJTUNnAD2WOFoS5oWWN0TBOmn8YEgSrDs",
+    "crypto": {
+      "aead": "A256GCM",
+      "iv": "l9QVQmh0vvK4Qpsa"
+    },
+    "unlock_slots": [
+      {
+        "slot_id": "8SGlT7AhX3HnZ_siLsITpw",
+        "method": "password-argon2id",
+        "created_at": "2026-08-17T00:00:00Z",
+        "kdf": {
+          "alg": "Argon2id",
+          "salt": "6XPQVQ89XQBC0OsMwPWjtQ",
+          "m": 16384,
+          "t": 2,
+          "p": 1,
+          "key_length": 32
+        },
+        "wrap": {
+          "alg": "A256GCM",
+          "iv": "AllXTfjOVuq8q5Y6",
+          "ciphertext": "4L039rccZ1MiVwBDm8QG4sXSZaXc5-EIJZOXvHypzXU",
+          "tag": "-5TvCMOJr4RDNvD1789eoQ"
+        }
+      }
+    ],
+    "ciphertext": "ZWSRHPKjDIKJkyfbijdWpc2u565J9HYO5VzbD5AwmEXKagBEHC7aEC5hyPQh70IT_fJCcE0JQlndn3NG6PSVAqjFSq1cSKlk_gdvJTig324KLqK-qosR39yWP8F0WGp-R4QOp4NmkofOzDKpJru6YLTMFtA7M9642mmSqfVuAXNhAilLLYv3WQzgxuJT3FKguBXKtHCKPP6h05a_OLieXzUJWJpsFNUSLt60E-LQascNrpqpIlrrtoYalGDpkn0MhprhuJJ8uXC_fc6-PcXwPaw0Y6MCET35KX8BZwI0H1KYjvZR0_wHaQ25q9_kjsLiyqCEJJ1ZjwrAgM06VZqx0K_4TFZGuSyLDi57HcLDbRD0Xk5qGS3JACtylFwig2wjwDvqKMuPdqBRxMw5zzQut2EnK59NEWoCP2I-Tq0gc5N2leMrs3uNT73b2bXPuSM6etHikpVSmCayvfzgrsV0AR1vxfd3ir1qvGu-mGN9d7nJEgifxKutrKL63O_AHN3vkMCRCSpHHwN4sWTl2MwEI6aqoTVghyUAE7k_2Dk1VK32Npo2zH72HQX3mrFqe66t22HyzefR7c5Kfjvwe0-pI7o5yOI35xizCOhyugyZbTI16yjgMdCdDdRf_QccL9g4bOLxOlM4zSr3R4KAJueoQzqhqCAqn4n9QhJOk6Ofxrp6OyP2SOKAx5iePmMW6wGA3iGwxndw818Tn5XECSB4G1stGKnC1hZNin7GiJ-09IIKBncfB5UGxb4rOIhyQ---OKHj626lDY_S8fMt5bGKX43KWw8X2KDYfuo38qzp3zdYTkIZfyNLvdqAHkOnrNc5G00uoRR9347o0UaqM1O8pV6q2A9_MA_xkut7PVhhjJnUiphY2HQ1IVPyUhEb8sxZ7INf_f2eqktSiFskoBYp1944_ARcOlmbh58KSrVrpkO-qOi5yVZ9jgPrO1_09QTx1mrPLhi8tPAQEwiLBxO3w_3e2CUwF3OkoebUb_kzHDh6RvUIgOHy_Vvd_4OX-Jy43Hh71zutfficQQJI0Kvzzrzor-_sQn7b_AJM0mhaM09PM3Fy0JohIX_TUxaUQFBQ0RGOj07EQaUTIK-Dvyldkh2f1zMVNj6gjRJEM_afwZn3nJ9KWawgdxEJaQZWyc3uQmCt_QA9tOkvkgA88y94ontHcovk9RH_RwvmZkX8XsA5T8SouOFiU6ypzEtsHPpwutfASRWhooKGvGMvlWKV3qbgGpZ9VeRzekOZf-7Tb2pwz5wks6-GpZPQ0ttuJlQi5MHRkVr1him7aDq8G7hukmeBIintYtz-BboKnJHJOiCKIP9GDnkLyTm3l0eQi-bI1WUkywhkHtDeFXAdvo3wozw64QNvmcb2IWtnPT8bL3OhhjNqLBpmdhDAjXf6gsuriLmZ7ysrSoADuyRiwmiaaEH3T5Dhi8H1C4RF8N3eyqrvhMqNPnWx7eX76k6UwOGcK4egNmhVtiiOcPfosDqdqr4DdZmLGm0AKIb88rxTl0Xvk4R4HO91uitOb91bW0GYUbgH6fwTR7NUwy_8LzObkcUBvKKBQDE2oYXXwHmgy5uQ6o1pmDke-avCC9K69voPSEICMfhJuMsaZ0akz9zI3QZpqyB1EZ37dyanC5LxA4RefNetKOhxrrCcW1sbDoGzuQbImLLQ0xiHCtPA4oY1cyzIZqlwdFm9eXGgZsLpooq2PDVsAqlRArukpOvG6wAGDOF8YQ7oi-iVHo2hP5XiGDFvtu0SS02uFdcG5HKjqEMn8QrLoexec8m8_LBVPwp3hk0ViKVaC3FHZQRCz06zmjVaIZKg8BixJ4HxZrZF53hCY8W1ilQM53k3-DRbwZYa32iSADHoU9qBrE7wFzzdTKia75MPsPPxo1_gJIO29ASNmLJ95EgtktHdQzPmACOU4-EYGxM8zRE",
+    "tag": "D7wyynZD2H3I6mbz_cDFyg",
+    "extensions": [],
+    "critical_extensions": []
+  },
+  "key_count": 2
+}

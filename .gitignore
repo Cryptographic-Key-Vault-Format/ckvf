@@ -1,0 +1,47 @@
+# Dart
+.dart_tool/
+.packages
+**/packages/dart/build/
+**/packages/dart/pubspec.lock
+
+# JavaScript / TypeScript
+node_modules/
+dist/
+coverage/
+.turbo
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# Rust
+target/
+Cargo.lock
+
+# Kotlin / Java
+.gradle/
+build/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Swift / Xcode
+.swiftpm/
+.build/
+DerivedData/
+*.xcuserstate
+
+# Go
+*.exe
+*.test
+*.out
+
+# Common
+.DS_Store
+.idea/
+.vs/
+*.log
+*.swp
+*~

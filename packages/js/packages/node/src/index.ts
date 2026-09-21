@@ -1,0 +1,30 @@
+export { createNodeCrypto } from "./crypto-node.js";
+export { generateEmailOtpToken, dns01ChallengeValue } from "./identity-challenge.js";
+
+export {
+  createVault,
+  openVault,
+  lockVault,
+  inspectPublicMetadata,
+  importPrivateKey,
+  exportPrivateKey,
+  getKey,
+  findKeysByShortId,
+  retireKey,
+  changePassword,
+  addUnlockSlot,
+  removeUnlockSlot,
+  mergeVaults,
+  replaceMsk,
+  serializeContainer,
+  constructOperation,
+  verifyOperation,
+  canReadVersion,
+  canWriteVersion,
+  supportedAlgorithms,
+  supportedKeyEncodings,
+  supportedUnlockMethods,
+  CkvfError,
+  TEST_ARGON2ID,
+  DEFAULT_LIMITS,
+} from "@ckvf/core";

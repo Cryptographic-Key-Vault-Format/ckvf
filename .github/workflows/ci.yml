@@ -1,0 +1,147 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  specification:
+    name: Specification files exist
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: specification
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required Community Draft files are present
+        run: |
+          set -euo pipefail
+          missing=0
+          files=(
+            SPEC.md
+            README.md
+            SECURITY-CONSIDERATIONS.md
+            PRIVACY-CONSIDERATIONS.md
+            THREAT-MODEL.md
+            INTEROPERABILITY.md
+            CONTRIBUTING.md
+            GOVERNANCE.md
+            CHANGELOG.md
+            LICENSE
+            CODE_OF_CONDUCT.md
+            SECURITY.md
+            MAINTAINERS.md
+            REFERENCE-IMPLEMENTATIONS.md
+            docs/prior-art.md
+            profiles/email-otp.md
+            profiles/dns-01.md
+            profiles/reference-key-service.md
+            profiles/scomm-pubkey-migration.md
+            ietf/README.md
+            ietf/draft-ckvf-community-00.md
+          )
+          for f in "${files[@]}"; do
+            if [[ ! -f "$f" ]]; then
+              echo "MISSING: $f"
+              missing=1
+            else
+              echo "OK: $f"
+            fi
+          done
+          if [[ "$missing" -ne 0 ]]; then
+            echo "One or more required specification files are missing."
+            exit 1
+          fi
+
+  schemas:
+    name: Compile and test JSON Schemas
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: schemas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: schemas/package-lock.json
+      - run: npm ci
+      - run: npm test
+
+  test-vectors:
+    name: JSON fixtures parse
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: test-vectors
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JSON fixtures parse
+        run: node -e "const fs=require('fs'); const m=JSON.parse(fs.readFileSync('manifest.json','utf8')); for (const v of m.vectors) { JSON.parse(fs.readFileSync('vectors/'+v.id+'.json','utf8')); } console.log('ok', m.vectors.length, 'VERSION', fs.readFileSync('VERSION','utf8').trim());"
+
+  dart:
+    name: Dart analyze and test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/dart
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: dart analyze
+      - name: Pin test-vector VERSION
+        run: |
+          PIN=$(tr -d '[:space:]' < test-vectors/VERSION)
+          CHECK=$(tr -d '[:space:]' < ../../test-vectors/VERSION)
+          echo "SDK pin=$PIN checkout=$CHECK"
+          test "$PIN" = "$CHECK"
+      - run: dart test
+        env:
+          CKVF_TEST_VECTORS: ${{ github.workspace }}/test-vectors
+
+  js:
+    name: JS build and test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: packages/js/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm run lint
+      - run: npm test
+      - name: Generate vectors and conformance
+        run: |
+          npm run generate-vectors -w @ckvf/node
+          npm run conformance
+      - name: Coverage
+        run: node --experimental-test-coverage --test packages/core/dist/core.test.js packages/node/dist/node.test.js packages/browser/dist/browser.test.js
+      - name: npm audit
+        run: npm audit --omit=dev
+        continue-on-error: true
+
+  templates:
+    name: Template SDK placeholders
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notice
+        run: |
+          echo "packages/{go,rust,dotnet,kotlin,swift} are templates; not yet implemented."
+          echo "A green check is not conformance. Pin test-vectors VERSION when implementation starts."
+          test -f packages/go/ckvf.go
+          test -f packages/rust/src/lib.rs
+          test -f packages/dotnet/src/Ckvf/Ckvf.cs
+          test -f packages/kotlin/src/main/kotlin/org/ckvf/Ckvf.kt
+          test -f packages/swift/Sources/CKVF/CKVF.swift
