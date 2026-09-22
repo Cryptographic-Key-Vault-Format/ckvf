@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "signed-operation.schema.json",
   "title": "CKVF Signed operation envelope",
-  "$comment": "Non-normative. SPEC.md Community Draft 0.1 Section 4.7 and Appendix B are authoritative. These schemas do not replace normative prose.",
+  "$comment": "Non-normative. SPEC.md SComm.AI Draft 0.1 Section 4.7 and Appendix B are authoritative. These schemas do not replace normative prose.",
   "type": "object",
   "additionalProperties": false,
   "required": ["body", "payload", "signature"],

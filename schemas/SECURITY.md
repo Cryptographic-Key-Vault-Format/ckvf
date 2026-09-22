@@ -8,7 +8,7 @@ This document describes how to report vulnerabilities in the CKVF JSON Schemas. 
 
 | Version | Supported |
 | --- | --- |
-| Community Draft 0.1 (container `"1.0"`) | Yes |
+| SComm.AI Draft 0.1 (container `"1.0"`) | Yes |
 | Unreleased editor branches | Best effort |
 
 ## Reporting a vulnerability

@@ -4,4 +4,4 @@ Thank you for contributing to CKVF.
 - Do not include secrets, production private keys, or live vault files.
 - Test keys MUST remain labeled **TEST KEY — NEVER USE IN PRODUCTION**.
 - SDKs MUST NOT silently redefine CKVF behavior or rewrite a vault format on open.
-- Specification text is Community Draft 0.1, **not** an IETF standard.
+- Specification text is SComm.AI Draft 0.1, **not** an IETF standard.

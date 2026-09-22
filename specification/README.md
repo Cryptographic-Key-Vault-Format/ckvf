@@ -1,14 +1,14 @@
 # Cryptographic Key Vault Format (CKVF)
 
-**Community Draft 0.1** — this is **not** an IETF standard, Internet-Draft, or RFC.
+**SComm.AI Draft 0.1** — the SComm.AI-maintained portable vault format. This is **not** an IETF standard, Internet-Draft, or RFC.
 
 CKVF is a lightweight, portable, user-controlled format for an independently encrypted vault of current and historical private keys bound to a verified Identity, authorized by a Master Signing Key (MSK), and synchronizable across devices without giving a hosting service access to plaintext keys.
 
-The originating use case is Secure Communications (SComm) and `pubkey.scomm.ai`. They are the **initial non-normative reference service only**. A compliant implementation **MUST** work without SComm.
+SComm.AI maintains this specification. Hosted Discovery / `pubkey.scomm.ai` store opaque ciphertext; they are not part of the container libraries in this repository.
 
 ## Normative document
 
-- **[SPEC.md](SPEC.md)** — Community Draft 0.1 specification (data model, cryptography, identity, MSK, merge, versioning)
+- **[SPEC.md](SPEC.md)** — SComm.AI Draft 0.1 specification (data model, cryptography, identity, MSK, merge, versioning)
 
 Read SPEC.md first. Companion documents do not override SPEC.md unless they are explicitly marked normative profiles.
 
@@ -28,9 +28,9 @@ Read SPEC.md first. Companion documents do not override SPEC.md unless they are 
 | [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md) | Adapter notes for pubkey.scomm.ai |
 | [REFERENCE-IMPLEMENTATIONS.md](REFERENCE-IMPLEMENTATIONS.md) | Known implementations |
 | [ietf/README.md](ietf/README.md) | Future IETF packaging notes |
-| [ietf/draft-ckvf-community-00.md](ietf/draft-ckvf-community-00.md) | kramdown-rfc Community Draft |
+| [ietf/draft-ckvf-community-00.md](ietf/draft-ckvf-community-00.md) | kramdown-rfc rendering of this draft |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to change the spec |
-| [GOVERNANCE.md](GOVERNANCE.md) | Editors, consensus, independence |
+| [GOVERNANCE.md](GOVERNANCE.md) | Editors, consensus, layering |
 | [CHANGELOG.md](CHANGELOG.md) | Spec version history |
 | [SECURITY.md](SECURITY.md) | Vulnerability reporting |
 | [MAINTAINERS.md](MAINTAINERS.md) | Maintainers |
@@ -65,17 +65,17 @@ Specification text is licensed under the [BSD 2-Clause License](LICENSE). Do not
 
 ## Status
 
-Community Draft 0.1. Wire format version `"1.0"` is frozen for interoperability experiments. The specification label `draft-0.1` will increment independently until a community 1.0 is declared under [GOVERNANCE.md](GOVERNANCE.md).
+SComm.AI Draft 0.1. Wire format version `"1.0"` is frozen for interoperability experiments. The specification label `draft-0.1` will increment independently until a 1.0 is declared under [GOVERNANCE.md](GOVERNANCE.md).
 
 ## Related paths
 
-This specification lives in the [`ckvf`](https://github.com/Cryptographic-Key-Vault-Format/ckvf) monorepo.
+This specification lives in the [`scomm-public/ckvf`](https://github.com/scomm-public/ckvf) monorepo.
 
 | Path | Role |
 | --- | --- |
 | [SPEC.md](SPEC.md) | This directory (normative text) |
 | [../schemas](../schemas) | JSON Schemas |
-| [../registries](../registries) | Community registries |
+| [../registries](../registries) | CKVF registries |
 | [../test-vectors](../test-vectors) | Pinned interoperability fixtures |
 | [../conformance](../conformance) | Conformance profiles |
 | [../packages/js](../packages/js) | JavaScript/TypeScript SDK |

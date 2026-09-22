@@ -1,6 +1,6 @@
 # Prior art
 
-Community Draft 0.1, informative. CKVF exists because excellent standards already represent **individual keys**, **protocol-specific secret-key packets**, **certificate bags**, **JSON keys**, and **enterprise KMS protocols**, but they do not collectively define the portable, identity-bound, multi-family, independently encrypted, multi-unlock, mergeable vault described in [SPEC.md](SPEC.md) Section 1.1.
+SComm.AI Draft 0.1, informative. CKVF exists because excellent standards already represent **individual keys**, **protocol-specific secret-key packets**, **certificate bags**, **JSON keys**, and **enterprise KMS protocols**, but they do not collectively define the portable, identity-bound, multi-family, independently encrypted, multi-unlock, mergeable vault described in [SPEC.md](SPEC.md) Section 1.1.
 
 This note records, for each related technology: what it solves, what CKVF reuses, what CKVF does **not** replace, and the remaining gap.
 

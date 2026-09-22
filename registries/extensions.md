@@ -2,7 +2,7 @@
 
 Community registry of extension `id` values. SPEC.md Sections 4.6, 13, and Appendix A.8.
 
-No standard extensions are registered in Community Draft 0.1.
+No standard extensions are registered in SComm.AI Draft 0.1.
 
 | id | critical typical | Specification |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
 ///
 /// Community Draft 0.1. This library consumes the same specification, schemas,
 /// registries, and test-vectors as other SDKs. It MUST NOT silently redefine
-/// CKVF behavior, MUST NOT depend on SComm, and MUST NOT rewrite a vault to a
+/// CKVF behavior, MUST NOT import Discovery HTTP, and MUST NOT rewrite a vault to a
 /// newer container version on open.
 library;
 

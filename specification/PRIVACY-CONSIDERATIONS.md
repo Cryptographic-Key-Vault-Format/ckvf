@@ -1,6 +1,6 @@
 # CKVF privacy considerations
 
-This document expands [SPEC.md](SPEC.md) Section 17. It is part of Community Draft 0.1 and is not an IETF RFC.
+This document expands [SPEC.md](SPEC.md) Section 17. It is part of SComm.AI Draft 0.1 and is not an IETF RFC.
 
 CKVF’s primary privacy goal is that **private keys and Identity details inside the payload remain confidential** from sync services, public directories, and anyone who obtains the vault file without an unlock factor. Outer-container metadata is not encrypted.
 

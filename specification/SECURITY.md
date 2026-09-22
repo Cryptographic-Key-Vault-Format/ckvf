@@ -6,7 +6,7 @@ This document describes how to **report vulnerabilities** in the CKVF specificat
 
 | Version | Supported |
 | --- | --- |
-| Community Draft 0.1 (`draft-0.1`, container `"1.0"`) | Yes |
+| SComm.AI Draft 0.1 (`draft-0.1`, container `"1.0"`) | Yes |
 | Unreleased editor branches | Best effort |
 | Informal notes outside this repository | No |
 

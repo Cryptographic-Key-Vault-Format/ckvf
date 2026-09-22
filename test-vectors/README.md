@@ -1,10 +1,10 @@
 # CKVF test vectors
 
-Versioned interoperability fixtures for Cryptographic Key Vault Format (CKVF) Community Draft 0.1.
+Versioned interoperability fixtures for Cryptographic Key Vault Format (CKVF) SComm.AI Draft 0.1.
 
 **TEST KEY — NEVER USE IN PRODUCTION.** All private keys, MSKs, and passwords in this directory are fixtures.
 
-CKVF is **not** an IETF standard. SComm and `pubkey.scomm.ai` are the originating use case and initial non-normative reference only. Vectors MUST be usable offline with no SComm dependency.
+CKVF is the SComm.AI-maintained portable vault format and is **not** an IETF standard. Vectors MUST be usable offline (no Discovery HTTP required).
 
 ## Pinning
 

@@ -1,6 +1,6 @@
 # CKVF threat model
 
-Community Draft 0.1. This document is informative except where it restates MUST/SHOULD requirements already in [SPEC.md](SPEC.md).
+SComm.AI Draft 0.1. This document is informative except where it restates MUST/SHOULD requirements already in [SPEC.md](SPEC.md).
 
 CKVF is a **portable encrypted vault format** plus signed lifecycle operations. It is not a complete identity-provider, mail user agent, or KMS product. Threats are split into:
 

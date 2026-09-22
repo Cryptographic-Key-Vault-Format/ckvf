@@ -1,9 +1,10 @@
 # Governance
 
-This SDK is an independent SemVer implementation of CKVF Community Draft 0.1.
+This SDK is a SemVer implementation of CKVF SComm.AI Draft 0.1.
 
-- **SPEC.md is source of truth.** This repository MUST NOT silently redefine CKVF behavior.
+- **SPEC.md is source of truth.** This package MUST NOT silently redefine CKVF behavior.
 - Schemas, registries, and pinned test vectors are inputs, not a license to change the wire format.
-- SComm and `pubkey.scomm.ai` have no veto. A compliant SDK MUST work without them.
+- SComm.AI maintains the format at [scomm-public/ckvf](https://github.com/scomm-public/ckvf).
 - Container `"1.0"` MUST NOT be reused with a different meaning.
-- Organization process: see the Cryptographic-Key-Vault-Format `GOVERNANCE.md`.
+- Organization process: see the repository-root `GOVERNANCE.md`.
+- MUST NOT import Discovery HTTP or hosted vault APIs into this package.

@@ -5,7 +5,7 @@ namespace Ckvf;
 /// <para>
 /// <b>Not implemented in the first pass.</b> This library MUST consume the same
 /// specification, schemas, registries, and test-vectors as other SDKs. It MUST
-/// NOT silently redefine CKVF behavior, MUST NOT depend on SComm, and MUST NOT
+/// NOT silently redefine CKVF behavior, MUST NOT import Discovery HTTP, and MUST NOT
 /// rewrite a vault to a newer container version on open.
 /// </para>
 /// <para>

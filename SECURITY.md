@@ -2,7 +2,7 @@
 
 **Do not** open public GitHub issues for vulnerabilities (no public 0-days).
 
-Report privately via GitHub Security Advisories on this repository, or to the maintainers in the organization `MAINTAINERS.md`.
+Report privately via GitHub Security Advisories on this repository, or to the maintainers in `MAINTAINERS.md`.
 
 Include the SDK package and SemVer, pinned test-vector `VERSION`, container version, and impact (key compromise, MSK bypass, identity takeover, or interoperability split). Describe the defect without exploit code targeting third-party systems.
 

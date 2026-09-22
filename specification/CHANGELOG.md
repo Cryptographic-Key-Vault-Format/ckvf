@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- Initial CKVF Community Draft 0.1.
+- Initial CKVF SComm.AI Draft 0.1.
 - Normative data model for outer container version `"1.0"`, unlock slots, encrypted payload, key records, tombstones, extensions, and signed operations.
 - AES-256-GCM vault protection with random VEK; Argon2id password wrapping (RFC 9106 second recommended option); Ed25519 MSK operations over RFC 8785 JCS.
 - Identity types `email` and `dns` with canonicalization and `identity_id`.
@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Merge semantics without silent last-writer-wins.
 - Email-otp and dns-01 profiles; non-normative reference key service; SComm adapter notes.
 - Community registries structured for later IANA migration (no IANA request).
-- kramdown-rfc Community Draft rendering under `ietf/`.
+- kramdown-rfc SComm.AI Draft rendering under `ietf/`.
 
 ### Status
 

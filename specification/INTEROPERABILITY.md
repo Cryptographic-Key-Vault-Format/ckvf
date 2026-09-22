@@ -1,6 +1,6 @@
 # CKVF interoperability
 
-Community Draft 0.1. CKVF is implementation-independent. Interoperability means two independent codebases can unlock, mutate, sync, and merge the same vault without sharing a vendor.
+SComm.AI Draft 0.1. Interoperability means two codebases that implement this SComm.AI-maintained specification can unlock, mutate, sync, and merge the same vault.
 
 SComm and `pubkey.scomm.ai` are **not** a conformance requirement. See [REFERENCE-IMPLEMENTATIONS.md](REFERENCE-IMPLEMENTATIONS.md) and [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md).
 

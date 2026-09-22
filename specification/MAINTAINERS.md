@@ -1,12 +1,12 @@
 # Maintainers
 
-CKVF is a community specification. No single vendor owns the format. SComm and `pubkey.scomm.ai` are the originating use case and the initial non-normative reference service; they do not hold exclusive editor rights. See [GOVERNANCE.md](GOVERNANCE.md).
+CKVF is the SComm.AI-maintained portable vault format. SComm.AI editors of [scomm-public/ckvf](https://github.com/scomm-public/ckvf) own the specification. See [GOVERNANCE.md](GOVERNANCE.md).
 
 ## Roles
 
 | Role | Responsibility |
 | --- | --- |
-| Spec editor | Normative text in `SPEC.md` and community registries |
+| Spec editor | Normative text in `SPEC.md` and CKVF registries |
 | Security editor | `SECURITY-CONSIDERATIONS.md`, `THREAT-MODEL.md`, `SECURITY.md` |
 | Profile editor | Documents under `profiles/` |
 | Implementation liaison | [REFERENCE-IMPLEMENTATIONS.md](REFERENCE-IMPLEMENTATIONS.md) listings |
@@ -15,11 +15,11 @@ A person MAY hold multiple roles. At least two spec editors SHOULD be able to pu
 
 ## Current maintainers
 
-Community Draft 0.1 is published by **CKVF Community Editors**. Named individuals will be added here as the GitHub organization fills the roles.
+SComm.AI Draft 0.1 is published by **SComm.AI CKVF Editors**.
 
 | Name | Role | Contact |
 | --- | --- | --- |
-| CKVF Community Editors | Spec editors (interim) | GitHub maintainers of this repository |
+| SComm.AI CKVF Editors | Spec editors | GitHub maintainers of [scomm-public/ckvf](https://github.com/scomm-public/ckvf) |
 
 Conduct reports: maintainers of this repository, per [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).  
 Vulnerability reports: [SECURITY.md](SECURITY.md).

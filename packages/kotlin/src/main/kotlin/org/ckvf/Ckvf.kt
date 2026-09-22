@@ -5,7 +5,7 @@ package org.ckvf
  *
  * **Not implemented in the first pass.** This library MUST consume the same
  * specification, schemas, registries, and test-vectors as other SDKs. It MUST
- * NOT silently redefine CKVF behavior, MUST NOT depend on SComm, and MUST NOT
+ * NOT silently redefine CKVF behavior, MUST NOT import Discovery HTTP, and MUST NOT
  * rewrite a vault to a newer container version on open.
  *
  * Intended public API: parse, validate, create, encrypt, decrypt, merge, and

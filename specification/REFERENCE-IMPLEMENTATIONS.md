@@ -1,28 +1,26 @@
 # Reference implementations
 
-CKVF is implementation-independent. Listing a product here does **not** make it normative. A compliant implementation MUST work without any service in this table.
+CKVF is the SComm.AI-maintained portable vault format. Listing a product here does **not** make it a substitute for [SPEC.md](SPEC.md). This document is SComm.AI Draft 0.1 status: **not** an IETF standard.
 
-This document is Community Draft 0.1 status: **not** an IETF standard.
-
-## Initial reference service
+## SComm.AI hosted service
 
 | Name | Kind | CKVF role | Notes |
 | --- | --- | --- | --- |
-| [pubkey.scomm.ai](https://pubkey.scomm.ai) | Hosted public-key / vault sync service | **Initial CKVF Reference Service Implementation** (non-normative) | Originating use case: SComm. Behavior specific to SComm belongs in an **adapter**. If the service differs from CKVF, change the adapter, not [SPEC.md](SPEC.md). See [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md) and [profiles/reference-key-service.md](profiles/reference-key-service.md). |
+| [pubkey.scomm.ai](https://pubkey.scomm.ai) | Hosted public-key / vault sync service | Stores **opaque** CKVF ciphertext | SComm.AI product. Hosted HTTP is not the container spec. See [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md) and [profiles/reference-key-service.md](profiles/reference-key-service.md). |
 
-The initial reference service:
+The hosted service:
 
 - SHOULD treat the CKVF container as an opaque encrypted blob when inspection is not required;
 - MUST NOT require plaintext private keys to store or sync a vault;
-- MUST NOT be the only way to unlock or parse a vault file.
+- MUST NOT be required to unlock or parse a local vault file.
 
-## Independent implementations
+## Other implementations
 
-Add rows as independent implementations appear. Prefer open-source libraries with a documented `canReadVersion` / `canWriteVersion` matrix.
+Add rows as implementations appear. Prefer open-source libraries with a documented `canReadVersion` / `canWriteVersion` matrix.
 
 | Implementation | Language / platform | Container | Operations | Profiles | License | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| *None registered besides the initial service* | — | `"1.0"` | — | — | — | Waiting on independent implementations |
+| [`packages/js`](../packages/js), [`packages/dart`](../packages/dart) | JS / Dart | `"1.0"` | create/open | — | Apache-2.0 | SComm.AI reference SDKs |
 
 Suggested columns for future rows: reader, writer, merge, email-otp, dns-01, offline-only.
 
@@ -31,11 +29,10 @@ Suggested columns for future rows: reader, writer, merge, email-otp, dns-01, off
 Open a pull request that adds a row and a link to:
 
 1. Source or spec-compliance notes;
-2. Which conformance targets from [INTEROPERABILITY.md](INTEROPERABILITY.md) are claimed;
-3. Confirmation that the implementation functions without SComm.
+2. Which conformance targets from [INTEROPERABILITY.md](INTEROPERABILITY.md) are claimed.
 
-Editors MAY list incomplete implementations as “experimental”. Editors MUST NOT refuse a listing solely because the implementation is not SComm.
+Editors MAY list incomplete implementations as “experimental”.
 
 ## Test vectors
 
-Cryptographic test vectors are not bundled in Draft 0.1 examples. When published, they will live in `test-vectors/` and will be the preferred interoperability check.
+Cryptographic test vectors live in `test-vectors/` and are the preferred interoperability check.

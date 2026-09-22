@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Cryptographic-Key-Vault-Format/ckvf/blob/main/conformance/results/schema.json",
+  "$id": "https://github.com/scomm-public/ckvf/blob/main/conformance/results/schema.json",
   "title": "CKVF conformance result",
   "description": "Machine-readable output of a CKVF conformance run. Profile object keys MUST be claim names, not profile ids.",
   "type": "object",

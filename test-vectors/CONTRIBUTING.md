@@ -16,7 +16,7 @@ Until vectors are published, you MAY add ids to [manifest.json](manifest.json) w
 2. Every private key in `keys/` MUST remain a **TEST KEY — NEVER USE IN PRODUCTION**.
 3. Do not include production vaults, live passwords, or real identity proofs.
 4. Negative tests MUST document the expected SPEC.md error code.
-5. Vectors MUST round-trip across implementations: Vendor A JS → `vault.ckvf` → Vendor B Dart → Vendor C Rust.
+5. Vectors MUST round-trip across implementations: JS → `vault.ckvf` → Dart (same container version).
 6. No SComm or `pubkey.scomm.ai` dependency.
 
 ## License

@@ -1,6 +1,6 @@
 # Contributing to CKVF schemas
 
-Thank you for helping keep the machine-readable schemas aligned with CKVF Community Draft 0.1.
+Thank you for helping keep the machine-readable schemas aligned with CKVF SComm.AI Draft 0.1.
 
 **These schemas do not replace the normative prose.** [specification/SPEC.md](../specification/SPEC.md) is authoritative. If a schema would accept a document SPEC rejects, or reject a document SPEC requires, the schema is wrong.
 

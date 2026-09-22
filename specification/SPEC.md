@@ -1,10 +1,10 @@
 # Cryptographic Key Vault Format (CKVF)
 
-**Community Draft 0.1**  
+**SComm.AI Draft 0.1**  
 **Document version:** draft-0.1  
 **Container format version:** `"1.0"`  
 **Date:** 2026-08-17  
-**Status:** Community Draft. This document is **not** an IETF Internet-Draft, RFC, or IETF standard.  
+**Status:** SComm.AI-maintained draft, published at [scomm-public/ckvf](https://github.com/scomm-public/ckvf). This document is **not** an IETF Internet-Draft, RFC, or IETF standard.  
 **License:** [BSD-2-Clause](LICENSE)
 
 ---
@@ -13,13 +13,13 @@
 
 The Cryptographic Key Vault Format (CKVF) defines a lightweight, portable, user-controlled container in which private keys belong to a verified Identity, an independently encrypted vault retains current and historical keys across cryptographic ecosystems, a Master Signing Key (MSK) authorizes lifecycle changes, and ownership of the Identity can recover or replace that MSK. Multiple unlock mechanisms may protect one vault. Devices may synchronize and merge vault state. Public-key directory services may store and transport the encrypted vault without gaining access to its contents.
 
-CKVF is implementation-independent. A compliant implementation MUST function without any particular vendor, product, or hosted service.
+CKVF is the SComm.AI-maintained portable vault format. Third parties MAY implement this published specification; SComm.AI maintains the normative text and reference SDKs.
 
 ---
 
 ## Status of This Document
 
-This document is a **CKVF Community Draft**. It is published to enable independent implementations, interoperability testing, and public review.
+This document is **CKVF SComm.AI Draft 0.1**. It is published so product clients and third-party implementations can interoperate on the same container.
 
 This document:
 
@@ -27,7 +27,7 @@ This document:
 - MUST NOT be described as “RFC”, “Internet-Draft”, or “IETF consensus” material;
 - MAY be used as the source text for a future Independent Submission or Working Group Internet-Draft named along the lines of `draft-<authors>-ckvf`.
 
-Normative requirements in this document apply to CKVF Community Draft 0.1 implementations. They do not create IETF protocol obligations.
+Normative requirements in this document apply to CKVF SComm.AI Draft 0.1 implementations. They do not create IETF protocol obligations.
 
 Companion documents:
 
@@ -39,7 +39,7 @@ Companion documents:
 | [INTEROPERABILITY.md](INTEROPERABILITY.md) | Interoperability profile |
 | [docs/prior-art.md](docs/prior-art.md) | Prior art and reuse |
 | [profiles/](profiles/) | Non-normative and profile documents |
-| [ietf/draft-ckvf-community-00.md](ietf/draft-ckvf-community-00.md) | kramdown-rfc rendering of this Community Draft |
+| [ietf/draft-ckvf-community-00.md](ietf/draft-ckvf-community-00.md) | kramdown-rfc rendering of this draft |
 
 ---
 
@@ -106,7 +106,7 @@ CKVF is designed to:
 6. Encrypt the vault independently of any hosting service.
 7. Support multiple unlock slots for one Vault Encryption Key (VEK).
 8. Support multi-device synchronization with explicit generation tracking and deterministic merge rules.
-9. Remain implementation-independent and usable offline as a file format.
+9. Remain usable offline as a file format (no Discovery HTTP required to open a vault).
 
 ### 1.3. What CKVF does NOT redefine
 
@@ -131,25 +131,26 @@ CKVF MUST NOT be interpreted as redefining or replacing:
 
 Post-quantum algorithms MUST NOT be introduced as a peer key family. PQC appears only as `algorithm` and/or `algorithm_suite` under an existing family such as `openpgp` or `smime`.
 
-### 1.4. Implementation independence and originating use case
+### 1.4. SComm.AI maintenance and layering
 
-CKVF is a file and protocol format. It is not a product.
+CKVF is the SComm.AI-maintained portable vault **container**. The specification and reference SDKs live in this repository ([scomm-public/ckvf](https://github.com/scomm-public/ckvf)).
 
-Secure Communications (SComm) and `pubkey.scomm.ai` are the originating use case and the **initial non-normative reference service**. They are not part of the CKVF conformance surface.
+SComm.AI products and `pubkey.scomm.ai` / `discovery.scomm.ai` use CKVF for encrypted private-key history. Discovery Protocol HTTP, MSK enroll, and hosted `vault_*` sync are **not** defined in this document; they belong in [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) and Pubkey client/server SDKs.
 
-A compliant implementation:
+A CKVF implementation:
 
-- MUST work without SComm, `pubkey.scomm.ai`, or any other named vendor;
+- MAY be written by SComm.AI or by a third party against this specification;
 - MUST NOT require a network round-trip to parse, unlock, or use a vault file;
-- MAY optionally speak a public-key directory or sync protocol, including the non-normative [reference-key-service profile](profiles/reference-key-service.md).
+- MUST NOT pull Discovery HTTP or hosted vault APIs into the container libraries in this repository;
+- MAY optionally speak a public-key directory or sync protocol, including the [reference-key-service profile](profiles/reference-key-service.md).
 
-SComm-specific behavior belongs in an adapter. If existing SComm behavior differs from CKVF, the adapter MUST change; this specification MUST NOT be bent to a single deployment. See [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md).
+Hosted-service differences belong in adapters. See [profiles/scomm-pubkey-migration.md](profiles/scomm-pubkey-migration.md).
 
 ### 1.5. Requirements language
 
 The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119.html) and [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174.html) when, and only when, they appear in all capitals, as shown here.
 
-These terms are defined once in this document and apply to the entire CKVF Community Draft 0.1 documentation set unless a companion document explicitly states otherwise.
+These terms are defined once in this document and apply to the entire CKVF SComm.AI Draft 0.1 documentation set unless a companion document explicitly states otherwise.
 
 ---
 
@@ -1135,7 +1136,7 @@ Implementations MUST NOT accept unregistered properties on core objects. This is
 
 ### 14.1. Specification versions
 
-This document is **Community Draft 0.1** (`draft-0.1`). The container `version` string defined here is `"1.0"`, so that independent implementations can freeze a wire format before the specification itself reaches 1.0.
+This document is **SComm.AI Draft 0.1** (`draft-0.1`). The container `version` string defined here is `"1.0"`, so that implementations can freeze a wire format before the specification itself reaches 1.0.
 
 Future specification labels MAY include `draft-0.2`, …, and `1.0`. A specification 1.0 release MAY keep container `"1.0"` if the wire format is unchanged.
 
@@ -1240,11 +1241,11 @@ A complete discussion is in [PRIVACY-CONSIDERATIONS.md](PRIVACY-CONSIDERATIONS.m
 
 ## 18. IANA Considerations
 
-This Community Draft **does not request** any IANA action.
+This draft **does not request** any IANA action.
 
-Appendix A defines **community registries** structured so they can later migrate to IANA (for example, in a future `draft-<authors>-ckvf`). Experimental and private-use namespaces (`exp:`, `priv:`) exist to avoid early IANA exhaustion.
+Appendix A defines **CKVF registries** structured so they can later migrate to IANA (for example, in a future `draft-<authors>-ckvf`). Experimental and private-use namespaces (`exp:`, `priv:`) exist to avoid early IANA exhaustion.
 
-Until IANA migration, the registries in this repository are authoritative for Community Draft 0.1.
+Until IANA migration, the registries in this repository are authoritative for SComm.AI Draft 0.1.
 
 ---
 
@@ -1364,7 +1365,7 @@ Implementations MUST produce this exact AAD string for this input (RFC 8785).
 
 ## 20. Test Vectors
 
-Normative interoperability fixtures for Community Draft 0.1 live in the companion `test-vectors` repository (this workspace: [`../test-vectors/`](../test-vectors/)).
+Normative interoperability fixtures for SComm.AI Draft 0.1 live in the companion `test-vectors` directory (this workspace: [`../test-vectors/`](../test-vectors/)).
 
 Pin the vector set by `test-vectors/VERSION` (currently `0.1.0`). Do not float on `main`.
 
@@ -1416,7 +1417,7 @@ The published set includes empty vaults, email and DNS identities, OpenPGP and P
 
 ## Appendix A. Community registries
 
-These registries are **not** IANA registries. They are the Community Draft 0.1 source of truth and are shaped for later IANA migration.
+These registries are **not** IANA registries. They are the SComm.AI Draft 0.1 source of truth and are shaped for later IANA migration.
 
 ### A.1. Unlock methods
 
@@ -1621,4 +1622,4 @@ Exceeding a limit MUST produce `ERR_PARSER_LIMIT` (or `ERR_KDF` for KDF paramete
 
 ---
 
-*End of CKVF Community Draft 0.1 specification.*
+*End of CKVF SComm.AI Draft 0.1 specification.*

@@ -1,6 +1,6 @@
 # Profile: reference key service (non-normative)
 
-**Status:** Community Draft 0.1, **non-normative**  
+**Status:** SComm.AI Draft 0.1, **non-normative**  
 **Not an IETF standard**  
 **Not a required component of CKVF**
 

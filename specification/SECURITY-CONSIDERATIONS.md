@@ -1,6 +1,6 @@
 # CKVF security considerations
 
-This document expands [SPEC.md](SPEC.md) Section 16. It is part of Community Draft 0.1 and is **not** an IETF RFC security-considerations section, though it is written so that a future Internet-Draft can reuse the structure.
+This document expands [SPEC.md](SPEC.md) Section 16. It is part of SComm.AI Draft 0.1 and is **not** an IETF RFC security-considerations section, though it is written so that a future Internet-Draft can reuse the structure.
 
 Normative requirements remain those stated in SPEC.md. This file explains *why* they exist and which problems CKVF does not solve.
 

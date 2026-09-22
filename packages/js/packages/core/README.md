@@ -6,7 +6,7 @@ This package contains types, RFC 8785 canonicalization, identity and key identif
 
 It does **not** include filesystem, DOM, or Node-specific APIs. Cryptographic primitives are supplied through a `CkvfCrypto` adapter implemented by `@ckvf/node` or `@ckvf/browser`.
 
-CKVF specification: Community Draft 0.1 (container version `1.0`). This package is not an IETF standard.
+CKVF specification: SComm.AI Draft 0.1 (container version `1.0`). This package is not an IETF standard.
 
 ## Capabilities
 

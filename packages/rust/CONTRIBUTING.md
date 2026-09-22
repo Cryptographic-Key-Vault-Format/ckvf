@@ -7,7 +7,7 @@ When implemented:
 1. Read `specification/SPEC.md`. Match the data model exactly.
 2. Consume schemas, registries, and a **pinned** test-vector `VERSION` (not `main`).
 3. MUST NOT silently redefine CKVF behavior.
-4. MUST NOT depend on SComm or `pubkey.scomm.ai`.
+4. MUST NOT import Discovery HTTP or hosted vault APIs.
 5. MUST NOT silently rewrite a vault on open.
 6. Expose `can_read_version`, `can_write_version`, `supported_algorithms`, `supported_key_encodings`, and `supported_unlock_methods`.
 7. Fail closed. Prefer SPEC.md error codes.

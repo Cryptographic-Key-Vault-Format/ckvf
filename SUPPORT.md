@@ -1,6 +1,6 @@
 # Support
 
-CKVF is a community specification, not a hosted product.
+CKVF is the SComm.AI-maintained portable vault format, published at [scomm-public/ckvf](https://github.com/scomm-public/ckvf).
 
 ## How to get help
 
@@ -16,6 +16,6 @@ CKVF is a community specification, not a hosted product.
 | Vulnerability | [SECURITY.md](SECURITY.md) — do not file a public issue |
 | Conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
 
-There is no SLA. Independent implementations SHOULD use the pinned test vectors and conformance profiles rather than asking a vendor to interpret the wire format.
+Implementations SHOULD use the pinned test vectors and conformance profiles.
 
-`pubkey.scomm.ai` is the initial **non-normative** reference service. Questions about that product belong with its operators, not with this organization, unless they are CKVF specification defects.
+Questions about hosted Discovery / `pubkey.scomm.ai` belong with that service unless they are CKVF container defects.

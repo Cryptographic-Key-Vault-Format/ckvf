@@ -6,11 +6,11 @@ Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [GOVERNANCE.md](GOVERNA
 
 ## What this project is
 
-- Community Draft 0.1 of an implementation-independent format.
+- SComm.AI Draft 0.1 of the Cryptographic Key Vault Format.
 - **Not** an IETF standard.
-- **Not** a product of SComm. `pubkey.scomm.ai` is the initial non-normative reference service.
+- **Maintained by SComm.AI** at [scomm-public/ckvf](https://github.com/scomm-public/ckvf).
 
-A proposal that only works if callers use SComm will be rejected.
+Do not add Discovery HTTP or hosted vault APIs to this specification.
 
 ## Before you write
 
@@ -23,11 +23,11 @@ A proposal that only works if callers use SComm will be rejected.
 
 | Type | Where | Notes |
 | --- | --- | --- |
-| Normative core | `SPEC.md` | Requires changelog bump of the community-draft label if behavior changes |
+| Normative core | `SPEC.md` | Requires changelog bump of the draft label if behavior changes |
 | Registry values | SPEC Appendix A | New families are a major decision; PQC MUST NOT be added as a family |
 | Profiles | `profiles/` | email-otp and dns-01 are security-property profiles, not vendor APIs |
 | Security/privacy/threats | companion markdown files | Keep SPEC.md highlights in sync |
-| IETF rendering | `ietf/draft-ckvf-community-00.md` | Must remain a Community Draft; SPEC.md wins on conflict |
+| IETF rendering | `ietf/draft-ckvf-community-00.md` | Must remain a non-IETF draft; SPEC.md wins on conflict |
 | Editorial | any | Typos, cross-links, examples labeled non-vectors |
 
 ## Normative language

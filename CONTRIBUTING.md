@@ -1,16 +1,16 @@
 # Contributing to CKVF
 
-Thank you for helping specify and implement a portable cryptographic key vault format.
+Thank you for helping specify and implement the SComm.AI-maintained portable vault format.
 
 Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [GOVERNANCE.md](GOVERNANCE.md) first.
 
 ## What this project is
 
-- Community Draft 0.1 of an implementation-independent format.
+- SComm.AI Draft 0.1 of the Cryptographic Key Vault Format.
 - **Not** an IETF standard.
-- **Not** a product of SComm. `pubkey.scomm.ai` is the initial non-normative reference service.
+- **Maintained by SComm.AI** and published at [scomm-public/ckvf](https://github.com/scomm-public/ckvf).
 
-A proposal that only works if callers use SComm will be rejected.
+This repository is the vault **container** (specification + SDKs). Discovery HTTP, MSK enroll, and hosted vault sync belong in other SComm repos. Do not add those dependencies to the core libraries.
 
 ## Where to send work
 
@@ -27,7 +27,7 @@ Open pull requests against this repository. Put the change in the directory that
 | Dart implementation | [`packages/dart`](packages/dart) |
 | Other language SDKs | [`packages/go`](packages/go), [`rust`](packages/rust), [`swift`](packages/swift), [`kotlin`](packages/kotlin), [`dotnet`](packages/dotnet) |
 
-SDKs MUST consume the specification, schemas, registries, and a **pinned** test-vector `VERSION`. They MUST NOT silently redefine CKVF behavior to match a local convenience or a vendor product.
+SDKs MUST consume the specification, schemas, registries, and a **pinned** test-vector `VERSION`. They MUST NOT silently redefine CKVF behavior to match a local convenience.
 
 Language-specific notes live under each package (`packages/*/CONTRIBUTING.md`).
 
@@ -45,7 +45,7 @@ Language-specific notes live under each package (`packages/*/CONTRIBUTING.md`).
 - NEVER silently rewrite a vault to a newer container version on open.
 - Pin test vectors by `VERSION` (or a matching git tag), not `main`.
 - SDK SemVer is independent of the specification label and of container `"1.0"`.
-- No SComm or `pubkey.scomm.ai` dependency in core libraries.
+- No Discovery HTTP or `pubkey.scomm.ai` client in core container libraries.
 
 ## Develop
 
@@ -67,7 +67,7 @@ cd packages/js && npm ci && npm run build && npm test
 
 ## Issues
 
-Open issues for ambiguities independent implementations could split on. If the issue is a vulnerability, follow [SECURITY.md](SECURITY.md) instead. Do not file public issues for exploitable defects.
+Open issues for ambiguities implementations could split on. If the issue is a vulnerability, follow [SECURITY.md](SECURITY.md) instead. Do not file public issues for exploitable defects.
 
 ## License
 

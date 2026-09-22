@@ -1,10 +1,10 @@
 # CKVF conformance
 
-Language-neutral **conformance profiles** and a **machine-readable result format** for Cryptographic Key Vault Format (CKVF) Community Draft 0.1.
+Language-neutral **conformance profiles** and a **machine-readable result format** for Cryptographic Key Vault Format (CKVF) SComm.AI Draft 0.1.
 
-This directory does **not** implement CKVF. The first-pass runner lives in [`packages/js/packages/conformance`](../packages/js/packages/conformance). Other language SDKs SHOULD emit the same result JSON so Vendor A (JS) → `vault.ckvf` → Vendor B (Dart) → Vendor C (Rust) can be compared mechanically.
+This directory does **not** implement CKVF. The first-pass runner lives in [`packages/js/packages/conformance`](../packages/js/packages/conformance). Other language SDKs SHOULD emit the same result JSON so JS → `vault.ckvf` → Dart (and later languages) can be compared mechanically.
 
-CKVF is **not** an IETF standard. SComm and `pubkey.scomm.ai` are the originating use case and initial non-normative reference only. Conformance MUST NOT require SComm.
+CKVF is the SComm.AI-maintained portable vault format and is **not** an IETF standard. Conformance MUST NOT require Discovery HTTP.
 
 ## Profiles
 

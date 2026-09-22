@@ -1,8 +1,8 @@
-# CKVF community registries
+# CKVF registries
 
-**Community Draft 0.1** — container version `"1.0"`.
+**SComm.AI Draft 0.1** — container version `"1.0"`.
 
-These tables are the Community Draft 0.1 source of truth for registered identifiers, shaped for later IANA migration. They are **not** IANA registries. This Community Draft does not request any IANA action ([SPEC.md](../specification/SPEC.md) Section 18).
+These tables are the SComm.AI Draft 0.1 source of truth for registered identifiers, shaped for later IANA migration. They are **not** IANA registries. This SComm.AI Draft does not request any IANA action ([SPEC.md](../specification/SPEC.md) Section 18).
 
 Until IANA migration, this directory plus SPEC Appendix A is authoritative for Draft 0.1. On conflict, **SPEC.md wins**.
 

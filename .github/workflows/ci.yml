@@ -13,7 +13,7 @@ jobs:
         working-directory: specification
     steps:
       - uses: actions/checkout@v4
-      - name: Verify required Community Draft files are present
+      - name: Verify required SComm.AI Draft files are present
         run: |
           set -euo pipefail
           missing=0

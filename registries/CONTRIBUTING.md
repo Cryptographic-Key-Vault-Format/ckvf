@@ -1,6 +1,6 @@
 # Contributing to CKVF community registries
 
-This is a lightweight registration process for Community Draft 0.1. These registries are **not** IANA registries. SPEC.md remains normative.
+This is a lightweight registration process for SComm.AI Draft 0.1. These registries are **not** IANA registries. SPEC.md remains normative.
 
 ## Namespaces
 
@@ -27,7 +27,7 @@ If these tables later migrate to IANA with numeric codes, the intended ranges ar
 | 1–127 | Standard; specification required |
 | 128–255 | Experimental; MUST NOT be required for core interop |
 | 256–1023 | Private / vendor; no IETF/IANA uniqueness |
-| 0, 1024–65535 | Reserved; do not assign in Community Draft 0.1 |
+| 0, 1024–65535 | Reserved; do not assign in SComm.AI Draft 0.1 |
 
 String registries stay strings on the wire. These ranges are reservation notes only.
 

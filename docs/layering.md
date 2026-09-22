@@ -1,6 +1,6 @@
 # Layering: CKVF vs Discovery
 
-CKVF is a **portable encrypted vault container** format and SDK family.
+CKVF is the **SComm.AI-maintained** portable encrypted vault **container** (this repo).
 
 Discovery Protocol / `discovery.scomm.ai` is a separate **mailbox metadata + HTTP** stack.
 
@@ -9,13 +9,14 @@ Discovery/Pubkey client (sdk_pubkey)
   - discoverMailbox, MSK, hosted vault sync orchestration
   - depends on → ckvf (container bytes only)
 
-ckvf (this repo)
+ckvf (this repo, scomm-public/ckvf)
   - create / open / export / import vault.ckvf
-  - MUST NOT import SComm or Discovery HTTP
+  - MUST NOT import Discovery HTTP or hosted vault APIs
 ```
 
 JS and Dart packages in **this** monorepo stay in sync on CKVF test-vectors.
 Discovery JS/Dart sync is owned by `sdk_pubkey` + `discovery-protocol` fixtures.
 
 Do not add Discovery Document types, pubkey HTTP clients, or MSK signing to
-this repository.
+this repository. That layering is technical, not a claim that CKVF is a
+vendor-neutral standards body.

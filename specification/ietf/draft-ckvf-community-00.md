@@ -19,9 +19,9 @@ pi:
   symrefs: yes
 author:
   -
-    name: CKVF Community Editors
-    organization: Cryptographic Key Vault Format Community
-    email: editors@ckvf.example
+    name: SComm.AI CKVF Editors
+    organization: SComm.AI
+    email: editors@scomm.ai
 normative:
   RFC2119:
   RFC8174:
@@ -46,12 +46,12 @@ informative:
   RFC8555:
   RFC9980:
   CKVFSPEC:
-    title: "Cryptographic Key Vault Format (CKVF) Community Draft 0.1"
-    target: "https://github.com/Cryptographic-Key-Vault-Format/ckvf/blob/main/specification/SPEC.md"
+    title: "Cryptographic Key Vault Format (CKVF) SComm.AI Draft 0.1"
+    target: "https://github.com/scomm-public/ckvf/blob/main/specification/SPEC.md"
     date: 2026
     author:
       -
-        org: CKVF Community Editors
+        org: SComm.AI
 --- abstract
 
 This document specifies the Cryptographic Key Vault Format (CKVF), a
@@ -64,26 +64,25 @@ protect one vault. Devices may synchronize and merge vault state.
 Public-key services may store the encrypted vault without gaining access
 to its contents.
 
-This document is a CKVF Community Draft rendered for kramdown-rfc. It is
+This document is CKVF SComm.AI Draft 0.1 rendered for kramdown-rfc. It is
 not an IETF Internet-Draft, RFC, or IETF standard.
 
 --- middle
 
 # Introduction
 
-## Community Draft Status
+## Draft Status
 
-This document is **CKVF Community Draft 0.1**. It MUST NOT be cited as
+This document is **CKVF SComm.AI Draft 0.1**. It MUST NOT be cited as
 an IETF standard. It MUST NOT be described as an RFC, as IETF consensus,
 or as an IETF Internet-Draft. A future document named
 `draft-<authors>-ckvf` MAY be submitted to the IETF; until that happens,
-the community specification in {{CKVFSPEC}} is authoritative if this
+the specification in {{CKVFSPEC}} is authoritative if this
 rendering disagrees with it.
 
-CKVF is implementation-independent. Secure Communications (SComm) and
-`pubkey.scomm.ai` are the originating use case and the initial
-non-normative reference service. A compliant implementation MUST work
-without SComm.
+CKVF is the SComm.AI-maintained portable vault format. Hosted Discovery
+and `pubkey.scomm.ai` store opaque ciphertext; they are not required to
+parse or unlock a local vault file.
 
 ## Why CKVF Exists
 
@@ -490,7 +489,7 @@ private keys.
 
 # IANA Considerations
 
-This Community Draft does not request any IANA action. Community
+This draft does not request any IANA action. CKVF
 registries (unlock methods, families, encodings, algorithms, operations,
 identity types, extension prefixes) are maintained with {{CKVFSPEC}} and
 are structured for later IANA migration.
@@ -499,6 +498,5 @@ are structured for later IANA migration.
 
 # Acknowledgements
 
-The originating use case is Secure Communications (SComm) and
-pubkey.scomm.ai as the initial non-normative reference service. CKVF is
-intentionally independent of that deployment.
+SComm.AI maintains CKVF and operates pubkey.scomm.ai as the hosted
+Discovery/Pubkey service that stores opaque vault ciphertext.

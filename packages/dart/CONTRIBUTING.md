@@ -5,7 +5,7 @@ Follow the monorepo [CONTRIBUTING.md](../../CONTRIBUTING.md).
 1. Read `specification/SPEC.md`. Match the data model exactly.
 2. Consume schemas, registries, and a **pinned** test-vector `VERSION` (not `main`). The pin lives in `test-vectors/VERSION`.
 3. MUST NOT silently redefine CKVF behavior.
-4. MUST NOT depend on SComm or `pubkey.scomm.ai`.
+4. MUST NOT import Discovery HTTP or hosted vault APIs.
 5. MUST NOT silently rewrite a vault on open.
 6. Expose `canReadVersion`, `canWriteVersion`, `supportedAlgorithms`, `supportedKeyEncodings`, and `supportedUnlockMethods`.
 7. Fail closed. Prefer SPEC.md error codes.

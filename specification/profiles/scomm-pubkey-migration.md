@@ -1,10 +1,10 @@
 # SComm / pubkey.scomm.ai migration notes
 
-**Status:** Community Draft 0.1, **non-normative**  
+**Status:** SComm.AI Draft 0.1, **non-normative**  
 **Not an IETF standard**  
 **Not part of the CKVF conformance surface**
 
-[pubkey.scomm.ai](https://pubkey.scomm.ai) is the **Initial CKVF Reference Service Implementation**. Secure Communications (SComm) is the originating use case. Neither is a normative requirement. A compliant CKVF implementation MUST work without SComm.
+[pubkey.scomm.ai](https://pubkey.scomm.ai) is the SComm.AI hosted Discovery/Pubkey service. It stores **opaque** CKVF ciphertext. Hosted HTTP is not the container specification.
 
 ## 1. Rule
 
@@ -68,4 +68,4 @@ The adapter is complete only if:
 
 ## 6. Listings
 
-`pubkey.scomm.ai` remains listed in [REFERENCE-IMPLEMENTATIONS.md](../REFERENCE-IMPLEMENTATIONS.md) as initial and non-normative. Additional independent implementations SHOULD be listed there without SComm affiliation.
+`pubkey.scomm.ai` is listed in [REFERENCE-IMPLEMENTATIONS.md](../REFERENCE-IMPLEMENTATIONS.md) as the SComm.AI hosted service. Other implementations MAY be listed there.

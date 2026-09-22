@@ -2,7 +2,7 @@
   "name": "ckvf-schemas",
   "version": "0.1.0",
   "private": true,
-  "description": "JSON Schema (draft 2020-12) for CKVF Community Draft 0.1. These schemas do not replace the normative prose in specification/SPEC.md.",
+  "description": "JSON Schema (draft 2020-12) for CKVF SComm.AI Draft 0.1. These schemas do not replace the normative prose in specification/SPEC.md.",
   "license": "BSD-2-Clause",
   "type": "module",
   "scripts": {

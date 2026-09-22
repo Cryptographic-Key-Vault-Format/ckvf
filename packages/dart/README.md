@@ -1,10 +1,10 @@
 # CKVF Dart SDK
 
-Cryptographic Key Vault Format (CKVF) **Community Draft 0.1**. This is **not** an IETF standard.
+Cryptographic Key Vault Format (CKVF) **SComm.AI Draft 0.1**, maintained at [scomm-public/ckvf](https://github.com/scomm-public/ckvf). This is **not** an IETF standard.
 
 Package [`ckvf`](https://pub.dev/packages/ckvf) `0.1.0` reads and writes CKVF container `"1.0"`. Specification labels (`draft-0.1`) and container versions (`"1.0"`) are versioned separately from this SDK's SemVer.
 
-SComm and `pubkey.scomm.ai` are the originating use case and initial non-normative reference only. This SDK **MUST NOT** depend on SComm.
+This SDK is the SComm.AI Dart implementation of the vault **container**. It MUST NOT import Discovery HTTP or hosted vault APIs.
 
 ## Contract
 
@@ -13,7 +13,7 @@ SComm and `pubkey.scomm.ai` are the originating use case and initial non-normati
 - Pin **test-vector `VERSION`** (currently `0.1.0`), **not** `main`.
 - MUST expose `canReadVersion`, `canWriteVersion`, `supportedAlgorithms`, `supportedKeyEncodings`, and `supportedUnlockMethods`.
 - MUST **never** silently rewrite a vault to a newer container version on open. Upgrade is an explicit write.
-- Interoperability: Vendor A JS → `vault.ckvf` → Vendor B Dart → Vendor C Rust.
+- Interoperability: JS → `vault.ckvf` → Dart (same container version).
 
 ## Install
 
@@ -28,7 +28,7 @@ Until the package is on pub.dev, depend on git:
 dependencies:
   ckvf:
     git:
-      url: https://github.com/Cryptographic-Key-Vault-Format/ckvf.git
+      url: https://github.com/scomm-public/ckvf.git
       path: packages/dart
       ref: v0.1.0
 ```

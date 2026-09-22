@@ -1,10 +1,10 @@
 name: ckvf
-description: Cryptographic Key Vault Format (CKVF) Dart SDK — Community Draft 0.1.
+description: Cryptographic Key Vault Format (CKVF) Dart SDK — SComm.AI Draft 0.1.
 version: 0.1.1
-homepage: https://github.com/Cryptographic-Key-Vault-Format/ckvf/tree/main/packages/dart
-repository: https://github.com/Cryptographic-Key-Vault-Format/ckvf
-issue_tracker: https://github.com/Cryptographic-Key-Vault-Format/ckvf/issues
-documentation: https://github.com/Cryptographic-Key-Vault-Format/ckvf/tree/main/specification
+homepage: https://github.com/scomm-public/ckvf/tree/main/packages/dart
+repository: https://github.com/scomm-public/ckvf
+issue_tracker: https://github.com/scomm-public/ckvf/issues
+documentation: https://github.com/scomm-public/ckvf/tree/main/specification
 topics:
   - crypto
   - vault

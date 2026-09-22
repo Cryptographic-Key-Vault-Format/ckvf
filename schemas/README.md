@@ -1,8 +1,8 @@
 # CKVF JSON Schemas
 
-**Community Draft 0.1** — container version `"1.0"`.
+**SComm.AI Draft 0.1** — container version `"1.0"`.
 
-These JSON Schemas (draft 2020-12) are a **machine-readable aid** for CKVF Community Draft 0.1. They encode the objects, field names, types, and encodings in [specification/SPEC.md](../specification/SPEC.md).
+These JSON Schemas (draft 2020-12) are a **machine-readable aid** for CKVF SComm.AI Draft 0.1. They encode the objects, field names, types, and encodings in [specification/SPEC.md](../specification/SPEC.md).
 
 **These schemas do not replace the normative prose.** On any conflict, SPEC.md wins. Cryptographic processing (AAD membership, JCS, generation_hash omission, wrap AAD, Argon2id, Ed25519 over `body` only), identity canonicalization, merge rules, and fail-closed error handling remain specified only in prose.
 

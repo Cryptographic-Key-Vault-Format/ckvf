@@ -2,9 +2,9 @@
 
 **Placeholder — not implemented in the first pass.**
 
-Cryptographic Key Vault Format (CKVF) **Community Draft 0.1**. This is **not** an IETF standard.
+Cryptographic Key Vault Format (CKVF) **SComm.AI Draft 0.1**. This is **not** an IETF standard.
 
-SComm and `pubkey.scomm.ai` are the originating use case and initial non-normative reference only. This SDK **MUST NOT** depend on SComm.
+SComm.AI maintains this format. This SDK MUST NOT import Discovery HTTP or hosted vault APIs.
 
 ## Contract
 
@@ -14,7 +14,7 @@ SComm and `pubkey.scomm.ai` are the originating use case and initial non-normati
 - This module uses **SemVer**. Specification labels (`draft-0.1`) and container versions (`"1.0"`) are versioned separately.
 - MUST expose `CanReadVersion`, `CanWriteVersion`, `SupportedAlgorithms`, `SupportedKeyEncodings`, and `SupportedUnlockMethods`.
 - MUST **never** silently rewrite a vault to a newer container version on open. Upgrade is an explicit write.
-- Interoperability: Vendor A JS → `vault.ckvf` → Vendor B Dart → Vendor C Rust.
+- Interoperability: JS → `vault.ckvf` → Dart (same container version).
 
 Intended public API (see `ckvf.go`): parse, validate, create, encrypt, decrypt, merge, and identifiers (`IdentityID`, `MskID`, `AbsoluteKeyID`, Short Key ID).
 

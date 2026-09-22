@@ -1,6 +1,6 @@
 # Profile: email-otp
 
-**Status:** Community Draft 0.1 profile  
+**Status:** SComm.AI Draft 0.1 profile  
 **Normative for implementations that claim this profile**  
 **Not an IETF standard**  
 **Not a vendor API**
