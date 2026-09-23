@@ -2,16 +2,20 @@
 
 CKVF is the **SComm.AI-maintained** portable encrypted vault **container** (this repo).
 
-Discovery Protocol / `discovery.scomm.ai` is a separate **mailbox metadata + HTTP** stack.
+Discovery Protocol / `discovery.scomm.ai` (debug port 3000) is the mailbox directory and mailer.
+
+The vault host is `vault.scomm.ai` (debug port 3001). Its HTTP profile is [specification/profiles/vault-host.md](../specification/profiles/vault-host.md).
 
 ```text
-Discovery/Pubkey client (sdk_pubkey)
-  - discoverMailbox, MSK, hosted vault sync orchestration
+Pubkey client (sdk_pubkey)
+  - discoverMailbox and directory MSK against discovery.scomm.ai
+  - OPRF, vault open, and ciphertext sync against vault.scomm.ai
   - depends on → ckvf (container bytes only)
 
 ckvf (this repo, scomm-public/ckvf)
   - create / open / export / import vault.ckvf
-  - MUST NOT import Discovery HTTP or hosted vault APIs
+  - vault-host profile (opaque records, grants, OPRF evaluate)
+  - container packages MUST NOT import Discovery HTTP or perform vault-host calls
 ```
 
 JS and Dart packages in **this** monorepo stay in sync on CKVF test-vectors.

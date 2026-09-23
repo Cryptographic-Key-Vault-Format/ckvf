@@ -135,7 +135,7 @@ Post-quantum algorithms MUST NOT be introduced as a peer key family. PQC appears
 
 CKVF is the SComm.AI-maintained portable vault **container**. The specification and reference SDKs live in this repository ([scomm-public/ckvf](https://github.com/scomm-public/ckvf)).
 
-SComm.AI products and `pubkey.scomm.ai` / `discovery.scomm.ai` use CKVF for encrypted private-key history. Discovery Protocol HTTP, MSK enroll, and hosted `vault_*` sync are **not** defined in this document; they belong in [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) and Pubkey client/server SDKs.
+SComm.AI products store CKVF ciphertext at `vault.scomm.ai` (debug `127.0.0.1:3001`). The vault host profile is [profiles/vault-host.md](profiles/vault-host.md). Discovery Protocol HTTP and directory MSK enroll belong in [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) on `discovery.scomm.ai`. Container libraries MUST NOT call either host.
 
 A CKVF implementation:
 

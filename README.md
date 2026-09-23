@@ -4,7 +4,7 @@
 
 CKVF is a lightweight, portable, user-controlled format for an independently encrypted vault of current and historical private keys bound to a verified Identity, authorized by a Master Signing Key (MSK), and synchronizable across devices without giving a hosting service plaintext keys.
 
-SComm.AI maintains this specification and the reference SDKs. [`pubkey.scomm.ai`](https://pubkey.scomm.ai) is the hosted Discovery/Pubkey service that stores **opaque** CKVF ciphertext. This repository is the **vault container** (format + SDKs). It does **not** implement Discovery Protocol HTTP, MSK enroll, or hosted `vault_*` sync — those live in [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) and the SComm client/server SDKs.
+SComm.AI maintains this specification and the reference SDKs. [`vault.scomm.ai`](https://vault.scomm.ai) stores **opaque** CKVF ciphertext (debug `127.0.0.1:3001`). This repository is the vault: the container format, the vault-host profile, and the reference SDKs. It does **not** implement Discovery Protocol HTTP or directory MSK enroll. Those live in [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) on `discovery.scomm.ai`.
 
 **Normative specification:** [specification/SPEC.md](specification/SPEC.md)
 
@@ -53,10 +53,9 @@ Language implementations of the same container version MUST interoperate: JS →
 
 | Concern | Belongs in |
 | --- | --- |
-| Discovery Document HTTP (`GET /v1/mailboxes/...`) | [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) + Discovery/Pubkey client SDKs (`sdk_pubkey`) |
-| MSK enroll/replace, OTP challenges, operations | Pubkey client SDKs + `discovery.scomm.ai` |
-| Hosted vault record sync (`vault_list` / `vault_put_record`) | Pubkey client SDKs (orchestration over CKVF ciphertext) |
-| Merging Discovery HTTP into this repo | **Forbidden** — keep the vault container layer separate |
+| Discovery Document HTTP (`GET /v1/mailboxes/...`), directory MSK enroll, mailer OTP | [`discovery-protocol`](https://github.com/scomm-public/discovery-protocol) on `discovery.scomm.ai` |
+| Vault host (`vault.scomm.ai`), OPRF evaluate, opaque generation storage | [specification/profiles/vault-host.md](specification/profiles/vault-host.md). The pubkey SDK calls this origin. Container libraries in `packages/` do not. |
+| Merging Discovery HTTP into this repo | **Forbidden** |
 
 SComm product clients depend on these packages for portable vault files.
 

@@ -33,4 +33,4 @@ Maintainers are added or removed by the process in [GOVERNANCE.md](GOVERNANCE.md
 
 ## Hosted service vs container spec
 
-`pubkey.scomm.ai` / `discovery.scomm.ai` implement hosted Discovery and opaque vault-record sync. Container bytes and unlock rules are defined here. Hosted HTTP belongs in Discovery/Pubkey clients, not in this repository.
+`discovery.scomm.ai` is the directory. `vault.scomm.ai` is the vault host defined in `specification/profiles/vault-host.md`. Container bytes and unlock rules are defined here. Container packages do not call those hosts.
