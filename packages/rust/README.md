@@ -1,6 +1,8 @@
 # CKVF Rust SDK
 
-**Placeholder — not implemented in the first pass.**
+This crate is the only reference SDK. Browser support is a WASM build of the same crate (`cargo build --features wasm --target wasm32-unknown-unknown`). Discovery HTTP and the identity OPRF are not part of CKVF.
+
+**Container operations are not implemented yet.** The exported functions still panic. Do not treat a build as a conforming vault.
 
 Cryptographic Key Vault Format (CKVF) **SComm.AI Draft 0.1**. This is **not** an IETF standard.
 

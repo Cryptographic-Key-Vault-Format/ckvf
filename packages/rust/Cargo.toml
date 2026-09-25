@@ -1,0 +1,17 @@
+[package]
+name = "ckvf"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "CKVF reference SDK. Browser builds are WASM from this crate."
+publish = false
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2", optional = true }
+
+[features]
+default = []
+wasm = ["dep:wasm-bindgen"]

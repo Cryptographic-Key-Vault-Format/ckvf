@@ -1144,7 +1144,9 @@ Future specification labels MAY include `draft-0.2`, …, and `1.0`. A specifica
 
 ### 14.2. SDKs
 
-SDKs version independently with Semantic Versioning. An SDK major version MAY support multiple container versions.
+The reference SDK is the Rust crate in `packages/rust`. Browser builds are WASM produced from that same crate. SDKs version independently with Semantic Versioning. An SDK major version MAY support multiple container versions.
+
+CKVF does not perform Discovery lookup and does not evaluate the identity OPRF. The OPRF secret and `POST /v1/id/oprf/evaluate` belong to the vault host. Discovery addresses a mailbox by the unsalted SHA-256 of the canonical address.
 
 ### 14.3. `canReadVersion` / `canWriteVersion`
 
