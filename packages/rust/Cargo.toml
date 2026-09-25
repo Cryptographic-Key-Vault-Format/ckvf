@@ -7,9 +7,11 @@ description = "CKVF reference SDK. Browser builds are WASM from this crate."
 publish = false
 
 [lib]
+name = "scomm_vault"
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
+serde_json = "1"
 wasm-bindgen = { version = "0.2", optional = true }
 
 [features]

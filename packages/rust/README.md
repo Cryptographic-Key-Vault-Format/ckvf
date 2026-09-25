@@ -2,7 +2,7 @@
 
 This crate is the only reference SDK. Browser support is a WASM build of the same crate (`cargo build --features wasm --target wasm32-unknown-unknown`). Discovery HTTP and the identity OPRF are not part of CKVF.
 
-**Container operations are not implemented yet.** The exported functions still panic. Do not treat a build as a conforming vault.
+JSON canonicalization and unpadded base64url are implemented and exported as `scomm_vault_jcs`, `scomm_vault_b64_encode`, and `scomm_vault_b64_decode`. The same functions are available from a WASM build (`--features wasm`). Container create, encrypt, decrypt, and merge are not implemented. Do not treat a build as a conforming vault.
 
 Cryptographic Key Vault Format (CKVF) **SComm.AI Draft 0.1**. This is **not** an IETF standard.
 
@@ -22,7 +22,7 @@ Intended public API (see `src/lib.rs`): parse, validate, create, encrypt, decryp
 
 ## Status
 
-Functions currently `panic!` with a not-implemented message. Do not treat a future green CI badge as conformance until real tests pin a test-vector `VERSION`.
+The codec and C ABI are implemented. Container operations return an error. Do not treat a green CI badge as conformance until real tests pin a test-vector `VERSION`.
 
 ## License
 
