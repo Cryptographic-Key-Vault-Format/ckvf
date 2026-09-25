@@ -4,6 +4,12 @@ This changelog records **specification** revisions (community-draft labels), not
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## Unreleased
+
+### Changed
+
+- A mail signing key is a private key. It stays on the device or inside the encrypted vault. The public directory does not store or return it. Signature checks use the verification public key, fetched by key id.
+
 ## [draft-0.1] — 2026-08-17
 
 ### Added

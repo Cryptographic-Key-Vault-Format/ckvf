@@ -267,6 +267,8 @@ flowchart TD
 | Historical private keys | MUST NOT be published | MAY be retained |
 | Service access | Readable by others | Ciphertext MAY be stored; plaintext MUST NOT be required |
 
+A mail **signing key** is a private key. It MUST remain on the device or inside this encrypted vault. The public directory MUST NOT store or return it. Other clients check a signature with the **verification** public key, fetched by key id from the directory, not by reading the signing key.
+
 A public-key service MAY synchronize the encrypted vault as an opaque blob. The service MUST NOT need plaintext private keys to provide storage or generation-conflict detection on the outer container.
 
 ### 3.3. Actors
